@@ -1,0 +1,24 @@
+{% extends 'courses/base_course.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Add class" %}{% endblock %}
+
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; 
+		<a href="{% url home %}">{% trans "Classes" %}</a> &rsaquo; 
+		<a href="#">{{ class.name }}</a> &rsaquo; {% trans "Calendar" %}
+	</nav>
+{% endblock %}
+
+
+{% block content %}
+	<header>
+		<h1>{% trans "Add class" %} </h1>
+	</header>
+    
+	<section class="content-module">
+		{% include "forms/form_incl.html" %}
+	</section>
+{% endblock %}

@@ -1,0 +1,940 @@
+html {
+    overflow-y: scroll;
+}
+
+
+.title-2 {
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* home */
+.home-institutions {
+    margin-top:20px;
+}
+
+.home-institutions li {
+    font-size:0.8em;
+    color:#777;
+    list-style-type: circle;
+    margin-left:17px;
+    margin-top:5px;
+}
+
+.home-institutions li span {
+    font-size:1.1em;
+    color:#000;
+}
+
+
+.home-institutions .registration-link {
+    color:#004EA5;
+    margin-top:20px;
+    display:block;
+    font-weight:bold;
+    font-size:0.9em;
+    text-decoration:underline;
+}
+
+
+
+header#page-top {
+    background:url(../img/bg/page_top.gif) repeat-x bottom left;
+    height:89px;
+    margin:0 0 1px 0;
+}
+
+header#page-top h1.logo {
+    background:url(../img/logo.gif);
+    height:72px;
+    float:left;
+    margin:7px 0 0 23px;
+    width:257px;
+}
+
+header#page-top h1 a {
+    display:block;
+    height:72px;
+    width:257px;
+}
+
+section#login-form-top {
+    float:right;
+    font-size:0.6em;
+    height:52px;
+    margin:20px 20px 0 0;
+    width:256px;
+}
+
+section#logged-in-user {
+    float:right;
+    font-size:0.6em;
+    height:52px;
+    margin:20px 20px 0 0;
+    width:256px;
+}
+
+section#logged-in-user hgroup {
+    float:left;
+    margin:0 10px 0 0;
+    text-align:right;
+    width:170px;
+}
+
+section#logged-in-user hgroup h1 {
+    font-size:1.3em;
+}
+
+section#logged-in-user hgroup h1 span {
+    color:#537da1;
+    font-weight:bold;
+}
+
+
+section#logged-in-user hgroup h2 {
+    color:#999;
+    font-size:1.1em;
+    font-style:italic;
+}
+
+section#logged-in-user a.sign-out {
+    background:url(../img/bt/sign_out.gif) no-repeat 0 0;
+    display:block;
+    float:right;
+    height:20px;
+    margin:7px 0 0 0;
+    text-indent:-9999px;
+    width:63px;
+}
+
+section#logged-in-user a.sign-out:hover {
+    background-position:0 -20px;
+}
+
+section#logged-in-user ul.links {
+    clear:both;
+    float:right;
+    margin:5px 0 0 0;
+}
+
+section#logged-in-user ul.links li {
+    float:left;
+    font-size:1.2em;
+    margin-left:20px;
+}
+
+section#logged-in-user ul.links li.has-sep {
+    list-style-type:disc !important;
+}
+
+section#current-course {
+    background:url(../img/bg/current_course.gif) repeat-x;
+    font-size:1.0em;
+    height:36px;
+    padding:7px 23px 7px 23px;
+}
+
+section#current-course section.course-id {
+    float:left;
+    font-size:0.7em;
+    width:90px;
+}
+
+section#current-course section.course-id h2 {
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+section#current-course .course-name {
+    color:#91aec6;
+    font-size:0.90em;
+    font-weight:bold;
+    padding:1px 0 0 0;
+}
+
+section#current-course .professor-name {
+    font-size:0.75em;
+}
+nav.hor-menu {
+    border-top:1px solid #d0d0d0;
+    border-bottom:1px solid #d0d0d0;
+    height:28px;
+}    
+nav.hor-menu ul {
+    clear:both;
+    display:block;
+}
+
+nav.hor-menu ul li {
+    background:url(../img/bg/hor_menu.jpg) no-repeat top left #fff;
+    border-right:1px solid #d0d0d0;
+    height:16px;
+    font-size:0.80em;
+    float:left;
+    padding:7px 10px 5px 15px;
+    position: relative;
+}
+
+nav.hor-menu ul li:hover {
+    background-position:0 -28px;
+}
+
+
+nav.hor-menu li ul {
+    display:none;
+}
+
+nav.hor-menu li ul li {
+    background-color:#f2ffee;
+    top:7px;
+    border-bottom:1px solid #ebebeb;
+    clear:both;
+    display:block;
+    width:100%;
+    z-index:1000;
+    font-size:90%;
+    margin-left:-15px;
+}
+
+nav.hor-menu li ul li:hover {
+    background-color:#f2ffee;
+}
+
+footer#page-bottom {
+    clear:both;
+    border-top:1px solid #d0d0d0;
+    padding:10px;
+    margin:10px 0 0 0;
+    text-align:right;
+}
+
+section#content {
+    padding:12px 25px 10px 25px;
+}
+
+section#content header h1 {
+    font-size:1.1em;
+    font-weight:bold;
+}
+
+section#content header h2 {
+    font-size:0.8em;
+    font-weight:bold;
+    margin:0 0 5px 0;
+}
+
+
+
+#id_annotation {
+    height:50px;
+}
+
+#sequence-container {
+    display:none;
+}
+
+#sequence-container textarea {
+    height:140px;
+}
+
+table#contig-validation th, table#contig-validation td {
+    font-size:0.8em;
+    padding:5px;
+    border-bottom:1px solid #d0d0d0;
+}
+
+table#contig-validation th {
+    font-weight:bold;
+}
+
+
+table#contig-validation td.tools a {
+    background:url(../img/bg/gray.png) repeat-x;
+    border-top:1px solid #666;
+    border-bottom:1px solid #666;
+    border-left:1px solid #666;
+    border-right:1px solid #c0c0c0;
+    color:#fff;
+    display:block;
+    font-size:10px;
+    font-weight:bold;
+    float:left;
+    height:10px;
+    padding:8px 10px 8px 10px;
+    margin:0;
+}
+
+table#contig-validation td.tools .last {
+    border-right:1px solid #666;
+}
+
+table#contig-validation td.tools a:hover {
+    background-position:0 -26px;
+}
+
+table#contig-validation .analysis label {
+    float:left;
+    margin-right:15px;
+}
+table#contig-validation .choices label {
+    float:left;
+    margin-right:15px;
+}
+table#contig-validation td textarea {
+    width:100%;
+}
+
+input.save-load-next {
+    background:url(../img/bt/save_blue.gif) no-repeat top left;
+    border:0;
+    cursor:pointer;
+    display:block;
+    height:20px;
+    width:43px;
+    color: transparent;
+    text-transform: capitalize;
+}
+
+input.save-load-next:hover {
+    background-position:0 -20px;
+}
+
+
+aside.left-column {
+    border-right:1px solid #d1d1d1;
+    float:left;
+    margin-right:15px;
+    width:290px;
+}
+
+div.multicolumn-wrapper {
+    clear:both;
+    margin:10px 0 0 0;
+}
+
+aside#cluster-summary-side form label {
+    float:left;
+    font-size:0.7em;
+}
+
+
+table#cluster-summary {
+    width:270px;
+}
+
+table#cluster-summary td {
+    border-bottom:1px solid #ddd;
+    padding:3px 8px 3px 3px;
+}
+
+table#cluster-summary td .status {
+    display:block;
+    height:5px;
+    width:25px;
+}
+
+table#cluster-summary td .status.s1 {
+    background:green;
+}
+
+table#cluster-summary td .status.s3 {
+    background:yellow;
+}
+
+table#cluster-summary td .status.s2 {
+    background:black;
+}
+
+table#cluster-summary td .status.s0 {
+    background:red;
+}
+
+
+table#cluster-summary .opt span {
+    background:#fff;
+    float:right;
+    font-size:8px;
+    border:1px solid #ccc;
+    padding:2px;
+    text-align:center;
+    margin-left:1px;
+    display:block;
+    width:8px;
+    cursor:help
+}
+
+table#cluster-summary thead td {
+    font-size:0.6em;
+    font-weight:bold;
+}
+
+table#cluster-summary tbody td {
+    font-size:0.70em;
+}
+
+table#cluster-summary tbody tr:hover {
+    background:#fffb94;
+}
+
+table#cluster-summary .selected {
+    background:#fffb94;
+}
+
+aside#cluster-summary-side .chart {
+    border:1px solid #ebebeb;
+    padding:10px;
+    width:220px;
+    margin-bottom:20px;
+    
+}
+
+aside#cluster-summary-side h4 {
+    font-size:12px;
+    margin-bottom:5px;
+}
+
+aside#cluster-summary-side .chart div {
+    background:red;
+    display:block;
+    height:20px;
+    text-align:text;
+    font-size:11px;
+    color:#fff;
+}
+
+aside#cluster-summary-side .chart div span {
+    background:green;
+    display:block;
+    float:left;
+    height:20px;
+    margin-right:5px;
+}
+
+div#tissue-type-selector a {
+    float:left;
+    display:block;
+    font-size:12px;
+    width:50px;
+    padding:10px;
+    border:1px solid #ededed;
+    margin-right:10px;
+    border-bottom:none;
+}
+
+div#tissue-type-selector a.active {
+    background:#ededed;
+}
+
+div#tissue-type-selector .info {
+    background:#ededed;
+    border:1px solid #ededed;
+    clear:both;
+    width:230px;
+    font-size:0.8em;
+    padding:10px;
+    margin:0 0 20px 0;
+}
+
+
+/* registration classes */
+ul#registration_steps {
+    clear:both;
+    font-size:0.8em;
+    margin:5px 0 15px 0;
+    overflow:hidden;
+}
+
+ul#registration_steps li {
+    border:1px solid #d0d0d0;
+    float:left;
+    padding:8px;
+    width:180px;
+    margin:0 10px 0 0;
+    background:#f3f3f3;
+    color:#c0c0c0;
+}
+
+ul#registration_steps span {
+    font-size:1.1em;
+    font-weight:bold;
+}
+
+
+ul#registration_steps li.current {
+    background:#d9efff;
+    color:#000;
+}
+
+ul#registration_steps li.done {
+    background:#f3f3f3;
+    color:#c0c0c0;
+}
+
+.gray-bar {
+    border-top:4px solid #ebebeb;
+    display:block;
+    width:100%;
+}
+.messages {
+    background:#fffdbf;
+    border-bottom:1px solid #d0d0d0;
+    padding:3px 25px 0 25px;
+    
+}
+.messages li {
+    padding:3px;
+    font-size:12px;
+    padding-left:20px;
+    color:#8f8d47;
+}
+
+.messages li.info {
+    background:url(../img/ok.png) no-repeat 0 1px;
+}
+
+.messages li.error {
+    background:url(../img/error.png) no-repeat 0 1px;
+}
+
+.messages .close {
+    display:block;
+    float:right;
+    background:#e5e3ab;
+    font-size:10px;
+    padding:2px;
+    width:40px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.messages .close:hover {
+    background:#ebebeb;
+    color:#333;
+}
+
+
+.default-ul-form ul li {
+    border-bottom:1px solid #ededed;
+    padding:5px;
+    overflow:hidden;
+}
+
+.default-ul-form ul li.error label {
+    color:#a14d2c;
+    font-weight:bold;
+}
+
+.default-ul-form label {
+    font-size:0.8em;
+    float:left;
+    width:120px;
+}
+
+
+.default-ul-form li ul {
+    float:left;
+    width:500px;
+}
+.default-ul-form li ul li {
+    clear:both;
+    display:block;
+        overflow:hidden;
+}
+
+.default-ul-form li ul li label {
+    clear:both;
+    display:block;
+    width:100%;
+}
+
+textarea {
+    font-family:Arial;
+    font-size:11px;
+    padding:4px;
+}
+
+section#error-container {
+    background:#fffdbf;
+    border:1px solid #c1613c;
+    padding:15px;
+    overflow:hidden;
+    margin:0 0 15px 0;
+}
+
+section#error-container h2 {
+    font-size:0.8em;
+    font-weight:bold;
+}
+
+section#error-container li {
+    border-bottom:1px solid #e4d695;
+    font-size:0.8em;
+}
+
+section#error-container li.last {
+    border-bottom:none;
+}
+
+section#error-container li span {
+    color:#a14d2c;
+    font-weight:bold;
+}
+
+section#login-section {
+    float:right;
+    height:52px;
+    margin:15px 20px 0 0;
+    width:306px;
+}
+
+section#login-section li {
+    font-size:0.8em;
+    padding:2px;
+}
+
+section#login-section li label {
+    float:left;
+    width:80px;
+}
+
+section#login-section ul.links {
+    clear:both;
+}
+
+section#login-section ul.links li {
+    float:left;
+    font-size:11px;
+    margin-right:12px;
+}
+
+
+section#login-section ul.links li a {
+    color:#004ea5;
+}
+
+section#login-section input {
+    width:120px;
+}
+
+section#login-section input.submit {
+    background:url(../img/bt/sign_in.gif) no-repeat top left;
+    border:0;
+    cursor:pointer;
+    display:block;
+    height:20px;
+    width:54px;
+    color: transparent;
+    text-transform: capitalize;
+}
+
+section#login-section input.submit:hover {
+    background-position:0 -20px;
+}
+
+section#login-section fieldset {
+    float:left;
+}
+
+/* questions */
+section#question-list {
+    margin:10px 0 0 0;
+}
+
+section#question-list .question{
+    border:1px solid #ededed;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+section#question-list .question h3{
+    font-size:14px;
+}
+
+section#question-list .question h3 span{
+    color:#fff;
+    display:inline-block;
+    font-size:14px;
+    margin:0 5px 5px 0;
+    padding:5px;
+}
+
+section#question-list .question.pending h3 span{
+    background:#dc7b7b;
+}
+
+section#question-list .question.done h3 span{
+    background:#4ea550;
+}
+
+section#question-list .question .answer {
+    clear:both;
+    margin:8px 0 0 0;
+}
+
+section#question-list .question .answer textarea{
+    display:block;
+    height:200px;
+    width:90%;
+}
+
+section#question-list .question .attached-files {
+    clear:both;
+    margin:8px 0 8px 0;
+}
+
+section#question-list .question .attached-files label{
+    float:left;
+    width:40px;
+    font-size:11px;
+}
+
+section#question-list .question a, td.link-external a {
+    background:url(../img/external_link.png) top right no-repeat;
+    padding-right:17px;
+    color:#5caef4;
+}
+
+section#question-list .attached-files {
+    padding:6px;
+    clear:both;
+    display:block;
+    margin-bottom:5px;
+    width:400px;
+}
+
+section#question-list .attached-files ul li {
+    font-size:12px;
+    border-bottom:1px solid #ededed;
+    margin-bottom:8px;
+    padding:0 0 4px 30px;
+    background:url(../img/download.png) no-repeat 0 3px;
+}
+
+section#question-list .attached-files h4 {
+    font-size:13px;
+    font-weight:bold;
+    margin:0 0 4px 0;
+}
+
+section#question-list .attached-files ul li i {
+    display:block;
+    color:#988;
+    font-size:11px;
+}
+
+section#question-list .save{
+    clear:both;
+    display:block;
+
+}
+
+footer#page-bottom section#lang-selection {
+    float:left;
+    text-align:left;
+    width:200px;
+}
+
+footer#page-bottom section#lang-selection h5 {
+    font-size:10px;
+    float:left;
+    margin-right:10px;
+}
+
+footer#page-bottom section#lang-selection img {
+    cursor:pointer;
+}
+
+
+/* user dashboard */
+nav.breadcrumbs {
+    border-bottom:1px solid #ededed;
+    font-size:0.7em;
+    padding:5px 5px 5px 23px;
+    color:#777;
+}
+
+nav.breadcrumbs a {
+    color:#91aec6;
+}
+
+nav.breadcrumbs a:hover {
+    color:#236ecd;
+}
+
+#user-dashboard .enrolled-courses {
+    margin:20px 0 0 0;
+}
+
+#user-dashboard .enrolled-courses table {
+    width:800px;
+}
+    
+#user-dashboard .enrolled-courses table .action-col {
+    width:60px;
+}
+
+#user-dashboard .enrolled-courses header h1 {
+    font-size:1.0em;
+}
+
+#user-dashboard .available-courses {
+    font-size:0.8em;
+    margin:20px 0 0 0;
+}
+
+#id_text {
+    width:840px;
+}
+
+
+/* classes */
+.default-table {
+    border:1px solid #d0d0d0;
+    padding:5px;
+    font-size:0.8em;
+    margin:10px 0 0 0;
+    width:950px;
+}
+
+.default-table thead {
+    background:#f3f3f3;
+    text-align:left;
+    font-size:0.8em;
+}
+.default-table td, .default-table th {
+    border-bottom:1px solid #ededed;
+    padding:5px;
+}
+
+.default-table tbody tr:hover {
+    background:#fffdbf;
+}
+
+.default-table .action {
+    width:90px;
+}
+
+.add-link {
+    background:url(../img/bt/add.png) no-repeat center left;
+    padding:0 0 0 18px;
+}
+
+.view-link {
+    background:url(../img/bt/blue_arrow.png) no-repeat center right;
+    color:#236ecd;
+    font-size:0.9em;
+    padding:0 18px 0 0;
+}
+
+.view-link:hover {
+    color:#74a3e0;
+}
+
+.superscript {
+    font-size:10px;
+    vertical-align:top;
+}
+
+.content-module {
+    margin-top:15px;
+    border-top:1px solid #ededed;
+    padding-top:15px;
+}
+
+.content-module header h3 {
+    font-size:1.0em;
+    font-weight:bold;
+}
+
+.content-module p {
+    font-size:0.8em;
+}
+
+.h1-link {
+    color:#537DA1;
+    font-size:11px;
+}
+
+.approve {
+    border:1px solid #c0c0c0;
+    font-size:11px;
+    background:url(../img/ok.png) no-repeat 3px center #fff;
+    padding:3px 5px 3px 24px;
+}
+
+.approve:hover {
+    background-color:#fff;
+}
+
+.view {
+    border:1px solid #c0c0c0;
+    font-size:11px;
+    background:url(../img/view.gif) no-repeat 3px center #fff;
+    padding:3px 5px 3px 24px;
+}
+
+
+.modify {
+    border:1px solid #c0c0c0;
+    font-size:11px;
+    background:url(../img/modify.png) no-repeat 3px center #fff;
+    padding:3px 5px 3px 24px;
+}
+
+.remove {
+    border:1px solid #c0c0c0;
+    font-size:11px;
+    background:url(../img/remove.png) no-repeat 3px center #fff;
+    padding:3px 5px 3px 24px;
+}
+
+
+.remove:hover {
+    background-color:#fff;
+}
+
+tr.highlight, tr.highlight:hover {
+    background:#ffefef !important;
+    color:#af4545;
+}
+
+.show-sequence, .hide-sequence {
+    color:#91AEC6;
+}
+
+.hide-sequence {
+    font-size:11px;
+}
+
+/* pagination */
+#cluster-summary-side .pagination {
+    width:220px;
+}
+
+.pagination {
+    margin:10px 0 10px 0;
+    font-size:12px;
+    text-align:center;
+}
+.pagination span.disabled {
+    background:#f3f3f3;
+    color:#c0c0c0;
+}
+
+.pagination a, .pagination span {
+    border:1px solid #ededed;
+    padding:3px 5px 3px 5px;
+}
+
+.pagination span.current {
+    background:#fffdbf;
+}
+
+
+.pdf-button {
+    background:url(../img/pdf.gif) no-repeat top left;
+    width:16px;
+    height:16px;
+    display:block;
+}
+

@@ -1,0 +1,26 @@
+{% load i18n %}
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>{% trans "Processing, please wait..." %}</title>
+</head>
+<body>
+	<p>{% trans "Processing, please wait..." %}</p>
+
+	<form method='post' action='http://genome.ucsc.edu/cgi-bin/hgBlat'>
+	   <input type='hidden' name='org' value='Human'>
+	   <input type='hidden' name='db' value='hg18'>
+
+	   <input type='hidden' name='type' value='DNA'>
+	   <input type='hidden' name='sort' value='query,score'>
+	   <input type='hidden' name='output' value='hyperlink'>
+	   <input type='hidden' name='userSeq' value='{{ contig }}'>
+	</form>
+
+	<script type="text/javascript" charset="utf-8">
+		document.forms[0].submit();
+	</script>
+
+</body>
+</html>
+

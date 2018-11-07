@@ -1,0 +1,189 @@
+{% extends 'courses/base_course.html' %}
+{% load i18n pagination_tags ga_tags %}
+
+{% block page_title %}{% trans "Contig Validation" %}{% endblock %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; 
+		<a href="{% url home %}">{% trans "Classes" %}</a> &rsaquo; 
+		<a href="#">{{ class_enrollment.course_class.name }}</a> &rsaquo; {% trans "Gene annotation" %}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	
+	<p></p>
+	
+	<div class="multicolumn-wrapper">
+		
+		<aside class="left-column" id="cluster-summary-side">
+			<header style="margin-bottom:10px">
+				<h1>{% trans "Gene annotation" %}</h1>
+			</header>
+
+			<section class="chart">
+				<h4>{% trans "Progress" %}</h4>
+				<div class="total" id="{{ total_contig_count }}">
+					<span id="{{ total_analyzed_annotation }}"></span>
+				</div>
+			</section>
+
+			<div id="tissue-type-selector">
+				{% for t in plugin_enrollment.tissue.tissue_set.all %}
+					<a {% if t == current_tissue %}class="active" {% endif %} href="{% url genome_annotation_validate_contig class_enrollment.id plugin_enrollment.id t.symbol %}">{{ t.get_type_display }}</a>
+				{% endfor %}
+				<div class="info">
+					<ul>
+						<li><b>{{ current_tissue.name }} - {{ current_tissue.get_type_display }}</b></li>
+						<li><a href="" class="tooltip toollink" style="margin:0;padding:0;width:auto;margin-right:5px;text-decoration:underline;" title="Total de ESTs usadas na clusterização">ESTs:</a> {{ current_tissue.est_qty }}</li>
+						<li><a href="" class="tooltip toollink" style="margin:0;padding:0;width:auto;margin-right:5px;text-decoration:underline;" title="Total de clusters gerados">Clusters:</a> {{ current_tissue.contig_qty }}</li>
+						<li><a href="" class="tooltip toollink" style="margin:0;padding:0;width:auto;margin-right:5px;text-decoration:underline;" title="Total de ESTs que não foram alinhadas">Singlets:</a> {{ current_tissue.singlet_qty }}</li>
+						<li><a href="" class="tooltip toollink" style="margin:0;padding:0;width:auto;margin-right:5px;text-decoration:underline;" title="Média de ESTs alinhadas por cluster">Depth avg:</a> {{ current_tissue.depth_avg }}</li>
+					</ul>
+				</div>
+			</div>
+			<form method="post" action="">
+				<fieldset>
+					<label for="id_cluster_filter">{% trans "Show" %}:</label> 
+					<select id="id_cluster_filter">
+						<option value="{% url genome_annotation_validate_contig class_enrollment.id plugin_enrollment.id tissue_symbol contig.id %}">All</option>							
+						{% for s in STATUS_CHOICES %}
+							<option {% ifequal s.0 contig_list_filter %}selected="selected" {% endifequal %}value="{% url genome_annotation_validate_contig class_enrollment.id plugin_enrollment.id tissue_symbol contig.id s.0 %}">{{ s.1 }}</option>							
+						{% endfor %}
+					</select>
+				</fieldset>
+			</form>
+			
+			<table cellpadding="0" cellspacing="0" id="cluster-summary">
+				<thead>
+					<tr>
+						<td>{% trans "Status" %}</td>
+						<td>{% trans "Cluster name" %}</td>
+						<td>ESTs</td>
+						<td></td>
+						
+					</tr>
+				</thead>
+				<tbody>
+					{% autopaginate contig_list 25 %}
+					{% for c in contig_list %}
+						{% get_annotation plugin_enrollment.id c.id %}
+						<tr{% if c.id == contig.id %} class="selected"{% endif %}>
+							<td><span class="status s{{ annotation.status }}"></span></td>
+							<td><a href="{% if contig_list_filter != None %}{% url genome_annotation_validate_contig class_enrollment.id plugin_enrollment.id tissue_symbol c.id contig_list_filter %}{% else %}{% url genome_annotation_validate_contig class_enrollment.id plugin_enrollment.id tissue_symbol c.id %}{% endif %}?{{request.META.QUERY_STRING }}">{{ c.name }}</a></td>
+							<td>{{ c.est_qty }}</td>
+							<td class="opt">
+								{% if annotation.is_snp %}<span class="snp" title="SNP">S</span>{% endif %}
+								{% if annotation.is_paralog %}<span class="paralog" title="{% trans "Paralog" %}">P</span>{% endif %}
+								{% if annotation.is_ortolog %}<span class="ortolog" title="{% trans "Ortolog" %}">O</span>{% endif %}
+								{% if annotation.is_alt_splice %}<span class="alt_splice" title="{% trans "Alternative splicing" %}">A</span>{% endif %}
+							</td>
+						</tr>
+					{% empty %}
+						<tr>
+							<td colspan="4"><i>Empty set</i></td>
+						</tr>				
+					{% endfor %}
+				</tbody>
+			</table>
+			{% paginate %}
+		</aside>
+		
+		<detail class="right-column">
+			<header style="margin-bottom:10px">
+				<h1>{{ plugin_enrollment.project.name }}</h1>
+			</header>
+			
+			<form action="{% if contig_list_filter != None %}{% url genome_annotation_validate_contig class_enrollment.id plugin_enrollment.id tissue_symbol contig.id contig_list_filter %}{% else %}{% url genome_annotation_validate_contig class_enrollment.id plugin_enrollment.id tissue_symbol contig.id %}{% endif %}?{{request.META.QUERY_STRING }}" method="post">
+				{% csrf_token %}
+				
+				{% with annotation_form as form %}
+					{% include "forms/errors.html" %}
+				{% endwith %}
+				
+				<table id="contig-validation">
+					<tr>
+						<th>{% trans "Cluster" %}:</th> <td>{{ contig.name }}</td>
+						<th>{% trans "ESTs" %}:</th> <td colspan="3">{{ contig.est_qty }}</td>
+					</tr>
+					
+					<tr>
+						<th>{% trans "Frequency" %}:</th> <td>{{ contig.frequency }}%</td>
+						<th>{% trans "Bases" %}:</th> <td colspan="3">{{ contig.base_qty }}</td>
+					
+					</tr>
+					
+					<tr>
+						<th>{% trans "Consensus" %}:</th> <td colspan="5"><a class="show-sequence" href="javascript:void(0);">{% trans "Show sequence" %}</a><div id="sequence-container"><a class="hide-sequence" href="javascript:void(0)">{% trans "Hide" %}</a><textarea>{{ contig.sequence }}</textarea></div></td>
+					</tr>
+					<tr>
+						<th>{% trans "ESTs" %}:</th> <td colspan="5"><a target="_blank" class="view-link" href="{% url genome_annotation_view_file contig.id %}">Visualizar</a></td>
+					</tr>
+					
+					<tr>
+						<th>{% trans "Tools" %}:</th>
+						<td colspan="5" class="tools">
+							<a href="{% url genome_annotation_blat contig.id %}" target="_blank">BLAT</a>
+							<a href="{% url genome_annotation_blast "x" contig.id %}" target="_blank">BLASTX</a>
+							<a href="{% url genome_annotation_blast "n" contig.id %}" target="_blank" class="last">BLASTN</a>
+						</td>
+					</tr>
+					
+					<tr>
+						<th>{% trans "Annotation" %}:</th> <td colspan="5">{{ annotation_form.annotation }}</td>
+					</tr>
+					<tr>
+						<th>{% trans "Symbol" %}:</th> <td> {{ annotation_form.gene_symbol }}</td>
+						<th>{% trans "GeneMap" %}:</th> <td colspan="3"> {{ annotation_form.gene_map }}</td>
+					</tr>
+					<tr>
+						<th>{% trans "RefSeq" %}:</th> <td> {{ annotation_form.refseq }}</td>
+						<th>{% trans "Unigene" %}:</th> <td colspan="3"> {{ annotation_form.unigene }}</td>
+					</tr>
+		
+					<tr>
+						<th>{% trans "Analysis" %}:</th>
+						<td colspan="5" class="analysis">
+							{{ annotation_form.status }}
+						</td>
+					</tr>
+					<tr>
+						<th> </th>
+						<td colspan="5" class="choices">
+							<label>{{ annotation_form.is_snp }} {% trans "SNP" %}</label>
+							<label>{{ annotation_form.is_paralog }}{% trans "Paralog" %}</label>
+							<label>{{ annotation_form.is_ortolog }} {% trans "Ortolog" %}</label>
+							<label>{{ annotation_form.is_alt_splice }} {% trans "Alternative Splicing" %}</label>
+						</td>
+					</tr>
+					<tr>
+						<th>{% trans "Notes" %}:</th> 
+						<td colspan="5"> {{ annotation_form.obs }}</td>
+					</tr>
+		
+					<tr>
+						<td colspan="6" class="submit">
+							<input type="submit" value="{% trans "Save and load next" %}" class="save-load-next"  />
+						</td>
+					</tr>
+				</table>
+			</form>
+		</detail>
+	</div>
+	<script type="text/javascript" charset="utf-8">
+	   $(document).ready(function(){
+	        $('.tooltip').tooltip({
+	                track: true, 
+                    delay: 0, 
+                    showURL: false, 
+                    opacity: 1, 
+                    fixPNG: true, 
+                    showBody: " - ", 
+                    extraClass: "tooltipfont", 
+                    top: -15, 
+                    left: 5 
+                });
+	   });
+	</script>
+{% endblock %}

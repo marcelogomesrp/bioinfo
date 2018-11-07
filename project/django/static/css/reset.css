@@ -1,0 +1,33 @@
+* { 
+    margin:0; 
+    padding:0; 
+}
+
+table {
+    border:0;
+}
+fieldset {
+    border:0;
+}
+header, section, aside, footer, nav, detail{
+    display: block;
+}
+
+body, td, th, h1, h2, h3, h4, h5, h6, p { 
+    font-family:Arial; 
+    font-size:100%/1.0;
+    font-weight:normal;
+}
+
+ul {
+   list-style-type:none;
+}
+
+a {
+    text-decoration:none;
+    color:#000;
+}
+
+p {
+    font-size:0.8em;
+}

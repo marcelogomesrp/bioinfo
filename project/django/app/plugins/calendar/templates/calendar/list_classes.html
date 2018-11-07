@@ -1,0 +1,42 @@
+{% extends 'courses/base_course.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Calendar" %}{% endblock %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; 
+		<a href="{% url home %}">{% trans "Classes" %}</a> &rsaquo; 
+		<a href="#">{{ course_enrollment.class.name }}</a> &rsaquo; {% trans "Calendar" %}
+	</nav>
+{% endblock %}
+
+{% block content %}
+    <section class="enrolled-courses">
+    	<header>
+    		<h1>{% trans "Calendar" %}</h1>
+    	</header>	
+    	<table class="default-table">
+    		<thead>
+    			<tr>
+    				<th>{% trans "Class" %}</th>
+    				<th>{% trans "Date" %}</th>
+    				<th>{% trans "Professor" %}</th>
+    				<th>{% trans "Classroom" %}</th>
+    			</tr>
+    		</thead>
+    		{% for c in object_list %}
+    			<tr class="{% cycle 'row1' 'row2' %}">
+    				<td><a href="#">{{ c.title }}</a></td>
+    				<td>{{ c.date|date:"d/M/Y H:i" }}</td>
+    				<td>{{ c.professor }}</td>
+    				<td>{{ c.classroom }}</td>
+    			</tr>
+    		{% empty %}
+    		    <tr>
+    		        <td colspan="4"><i>{% trans "No events found" %}</i></td>
+    		    </tr>
+    		{% endfor %}
+    	</table>
+    </section>
+{% endblock content %}

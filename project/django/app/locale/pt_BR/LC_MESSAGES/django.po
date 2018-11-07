@@ -1,0 +1,1361 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: BioInfo 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-31 13:01-0300\n"
+"PO-Revision-Date: 2011-07-31 13:14-0300\n"
+"Last-Translator: Renato Garcia Pedigoni <renatopedigoni@gmail.com>\n"
+"Language-Team: Renato Garcia Pedigoni <renatopedigoni@gmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: accounts/forms.py:15
+msgid "Full name"
+msgstr "Nome completo"
+
+#: accounts/forms.py:16
+#: accounts/templates/accounts/list_accounts.html:15
+msgid "E-mail"
+msgstr "E-mail"
+
+#: accounts/forms.py:17
+msgid "Enrollment year"
+msgstr "Ano de ingresso"
+
+#: accounts/forms.py:18
+msgid "State"
+msgstr "Estado"
+
+#: accounts/forms.py:19
+msgid "Birth date"
+msgstr "data de nascimento"
+
+#: accounts/forms.py:37
+msgid "Please enter a valid year"
+msgstr "Por favor digite um ano válido"
+
+#: accounts/forms.py:57
+msgid "Registration completed. Please select a institution  bellow to get enrolled in a class."
+msgstr "Cadastro efetuado. Por favor selecione uma instituição abaixo para se matricular."
+
+#: accounts/models.py:12
+msgid "user"
+msgstr "usuário"
+
+#: accounts/models.py:13
+msgid "birth date"
+msgstr "data de nascimento"
+
+#: accounts/models.py:14
+#: institutions/models.py:13
+#: institutions/models.py:21
+#: plugins/genome_annotation/modelsdir/submission.py:62
+msgid "institution"
+msgstr "instituição"
+
+#: accounts/models.py:15
+#: institutions/models.py:9
+msgid "city"
+msgstr "cidade"
+
+#: accounts/models.py:16
+#: institutions/models.py:10
+msgid "state"
+msgstr "estado"
+
+#: accounts/models.py:17
+#: courses/models.py:19
+#: courses/models.py:25
+#: plugins/calendar/models.py:9
+#: plugins/genome_annotation/modelsdir/questions.py:11
+msgid "course"
+msgstr "curso"
+
+#: accounts/models.py:18
+msgid "enrollment year"
+msgstr "ano de ingresso"
+
+#: accounts/models.py:19
+msgid "last update"
+msgstr "última atualização"
+
+#: accounts/models.py:24
+#: enrollments/models.py:10
+msgid "account"
+msgstr "usuário"
+
+#: accounts/models.py:24
+msgid "accounts"
+msgstr "usuários"
+
+#: accounts/views.py:29
+msgid "Your session has been closed"
+msgstr "Sua sessão foi finalizada"
+
+#: accounts/templates/accounts/base_wizard.html:4
+#: accounts/templates/accounts/base_wizard.html:18
+#: templates/base.html:65
+msgid "Registration"
+msgstr "Cadastro"
+
+#: accounts/templates/accounts/base_wizard.html:18
+#: accounts/templates/accounts/change_password.html:8
+#: accounts/templates/accounts/login.html:8
+#: accounts/templates/accounts/password_changed.html:7
+#: appsite/templates/appsite/dashboard.html:8
+#: courses/templates/courses/add_course.html:8
+#: courses/templates/courses/class_detail.html:8
+#: courses/templates/courses/list_classes.html:8
+#: enrollments/templates/enrollments/enrollment_success.html:8
+#: enrollments/templates/enrollments/instructor_dashboard.html:8
+#: enrollments/templates/enrollments/manage_enrollments.html:8
+#: enrollments/templates/enrollments/student_dashboard.html:8
+#: institutions/templates/institutions/add_department.html:9
+#: institutions/templates/institutions/add_institution.html:8
+#: institutions/templates/institutions/list_institutions.html:8
+#: plugins/calendar/templates/calendar/add_class.html:9
+#: plugins/calendar/templates/calendar/instructor_list_classes.html:8
+#: plugins/calendar/templates/calendar/list_classes.html:8
+#: plugins/genome_annotation/templates/genome_annotation/add_question.html:9
+#: plugins/genome_annotation/templates/genome_annotation/enrollment.html:8
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:9
+#: plugins/genome_annotation/templates/genome_annotation/manage_questions.html:9
+#: plugins/genome_annotation/templates/genome_annotation/questions.html:9
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:8
+#: plugins/genome_annotation/templates/genome_annotation/video_tutorials.html:8
+msgid "Home"
+msgstr "Home"
+
+#: accounts/templates/accounts/base_wizard.html:24
+msgid "Registration form"
+msgstr "Formulário de cadastro"
+
+#: accounts/templates/accounts/change_password.html:4
+#: accounts/templates/accounts/change_password.html:9
+#: accounts/templates/accounts/change_password.html:15
+#: accounts/templates/accounts/password_changed.html:7
+#: templates/base.html:50
+msgid "Change password"
+msgstr "Alterar senha"
+
+#: accounts/templates/accounts/change_password.html:19
+msgid "Fill the form below to change your password."
+msgstr "Preencha os campos abaixo para alterar sua senha"
+
+#: accounts/templates/accounts/list_accounts.html:6
+msgid "Accounts"
+msgstr "Usuários"
+
+#: accounts/templates/accounts/list_accounts.html:13
+#: enrollments/templates/enrollments/instructor_dashboard.html:34
+#: enrollments/templates/enrollments/manage_enrollments.html:23
+#: enrollments/templates/enrollments/student_dashboard.html:43
+msgid "Name"
+msgstr "Nome"
+
+#: accounts/templates/accounts/list_accounts.html:14
+#: enrollments/templates/enrollments/instructor_dashboard.html:35
+#: enrollments/templates/enrollments/manage_enrollments.html:24
+#: enrollments/templates/enrollments/student_dashboard.html:44
+#: institutions/templates/institutions/list_institutions.html:24
+#: plugins/genome_annotation/templates/genome_annotation/submission/authors.html:27
+#: plugins/genome_annotation/templates/genome_annotation/submission/institutions.html:25
+msgid "Institution"
+msgstr "Instituição"
+
+#: accounts/templates/accounts/list_accounts.html:16
+msgid "Registration date"
+msgstr "Data de cadastro"
+
+#: accounts/templates/accounts/list_accounts.html:17
+msgid "Is active"
+msgstr "Ativo?"
+
+#: accounts/templates/accounts/login.html:4
+#: accounts/templates/accounts/login.html:8
+#: accounts/templates/accounts/login.html:16
+msgid "Login"
+msgstr "Login"
+
+#: accounts/templates/accounts/login.html:20
+msgid "Invalid login"
+msgstr "Login inválido"
+
+#: accounts/templates/accounts/login.html:22
+msgid "Wrong username or password"
+msgstr "Usuário ou senha incorreto(s)"
+
+#: accounts/templates/accounts/password_changed.html:4
+#: accounts/templates/accounts/password_changed.html:12
+msgid "Password changed"
+msgstr "Senha alterada"
+
+#: accounts/templates/accounts/password_changed.html:15
+msgid "Your password was changed. The password will take effect for your email at the next login. "
+msgstr "Sua senha foi alterada. Utilize a nova senha em seu próximo login."
+
+#: accounts/templates/accounts/wizard_0.html:6
+#: accounts/templates/accounts/wizard_1.html:6
+msgid "Personal information"
+msgstr "Dados pessoais"
+
+#: accounts/templates/accounts/wizard_0.html:7
+#: accounts/templates/accounts/wizard_1.html:7
+msgid "Login information"
+msgstr "Dados para acesso"
+
+#: accounts/templates/accounts/includes/form_login.html:6
+#: templates/base.html:59
+msgid "Username"
+msgstr "Usuário"
+
+#: accounts/templates/accounts/includes/form_login.html:7
+#: templates/base.html:60
+msgid "Password"
+msgstr "Senha"
+
+#: accounts/templates/accounts/includes/form_login.html:10
+msgid "Sign In"
+msgstr "Entrar"
+
+#: appsite/templates/appsite/dashboard.html:8
+#: enrollments/templates/enrollments/instructor_dashboard.html:15
+#: enrollments/templates/enrollments/student_dashboard.html:15
+msgid "Dashboard"
+msgstr "Informações do curso"
+
+#: appsite/templates/appsite/dashboard.html:14
+#: appsite/templates/appsite/home.html:9
+msgid "Welcome"
+msgstr "Bem vindo"
+
+#: appsite/templates/appsite/dashboard.html:25
+#: enrollments/templates/enrollments/user_enrollments.html:13
+msgid "Classes I'm enrolled in"
+msgstr "Cursos que estou matrículado"
+
+#: appsite/templates/appsite/dashboard.html:30
+#: courses/templates/courses/list_classes.html:31
+#: enrollments/templates/enrollments/user_enrollments.html:18
+msgid "Class name"
+msgstr "Nome do curso"
+
+#: appsite/templates/appsite/dashboard.html:31
+#: courses/models.py:26
+#: courses/templates/courses/list_classes.html:32
+#: enrollments/templates/enrollments/student_dashboard.html:20
+msgid "Instructor"
+msgstr "Monitor"
+
+#: appsite/templates/appsite/dashboard.html:32
+#: appsite/templates/appsite/dashboard.html:72
+#: enrollments/templates/enrollments/user_enrollments.html:20
+msgid "Class start date"
+msgstr "Data de início do curso"
+
+#: appsite/templates/appsite/dashboard.html:33
+#: enrollments/templates/enrollments/instructor_dashboard.html:37
+#: enrollments/templates/enrollments/manage_enrollments.html:26
+#: enrollments/templates/enrollments/user_enrollments.html:21
+msgid "Enrollment date"
+msgstr "Data de matrícula"
+
+#: appsite/templates/appsite/dashboard.html:34
+#: enrollments/templates/enrollments/user_enrollments.html:22
+msgid "Approved?"
+msgstr "Aprovado?"
+
+#: appsite/templates/appsite/dashboard.html:46
+#: appsite/templates/appsite/dashboard.html:83
+#: enrollments/templates/enrollments/user_enrollments.html:34
+msgid "View"
+msgstr "Visualizar"
+
+#: appsite/templates/appsite/dashboard.html:48
+#: plugins/genome_annotation/modelsdir/annotation.py:47
+msgid "Pending"
+msgstr "Pendente"
+
+#: appsite/templates/appsite/dashboard.html:64
+msgid "Classes I'm teaching"
+msgstr "Cursos que sou monitor"
+
+#: appsite/templates/appsite/dashboard.html:69
+msgid "Course name"
+msgstr "Nome do curso"
+
+#: appsite/templates/appsite/dashboard.html:70
+msgid "Enrolled students"
+msgstr "Alunos matrículados"
+
+#: appsite/templates/appsite/dashboard.html:71
+msgid "Pending students"
+msgstr "Alunos pendentes"
+
+#: appsite/templates/appsite/dashboard.html:95
+msgid "Find a class to attend"
+msgstr "Encontre um curso para participar"
+
+#: appsite/templates/appsite/dashboard.html:97
+msgid "Search for available classes"
+msgstr "Procurar por cursos disponíveis"
+
+#: appsite/templates/appsite/home.html:25
+msgid "Institutions that have used this course"
+msgstr "Instituições que já utilizaram o curso de Bioinformática Online"
+
+#: appsite/templates/appsite/home.html:32
+msgid "Sign up now to get access"
+msgstr "Cadastre-se agora para ter acesso aos cursos"
+
+#: appsite/templates/appsite/includes/menu_admin.html:4
+msgid "Users"
+msgstr "Usuários"
+
+#: appsite/templates/appsite/includes/menu_admin.html:5
+#: courses/templates/courses/list_classes.html:9
+#: institutions/templates/institutions/add_department.html:10
+#: institutions/templates/institutions/add_institution.html:9
+#: institutions/templates/institutions/list_institutions.html:4
+#: institutions/templates/institutions/list_institutions.html:8
+#: institutions/templates/institutions/list_institutions.html:14
+#: plugins/genome_annotation/templates/genome_annotation/submission/base.html:61
+msgid "Institutions"
+msgstr "Instituições"
+
+#: appsite/templates/appsite/includes/menu_admin.html:6
+#: enrollments/templates/enrollments/user_enrollments.html:4
+msgid "My classes"
+msgstr "Meus cursos"
+
+#: courses/models.py:13
+#: courses/models.py:29
+#: institutions/models.py:7
+#: institutions/models.py:22
+#: plugins/genome_annotation/modelsdir/contigs.py:23
+#: plugins/genome_annotation/modelsdir/projects.py:9
+#: plugins/genome_annotation/modelsdir/submission.py:71
+msgid "name"
+msgstr "nome"
+
+#: courses/models.py:14
+#: courses/models.py:31
+msgid "short description"
+msgstr "descrição resumida"
+
+#: courses/models.py:15
+#: courses/models.py:32
+msgid "full description"
+msgstr "descrição completa"
+
+#: courses/models.py:19
+msgid "courses"
+msgstr "cursos"
+
+#: courses/models.py:27
+#: institutions/models.py:25
+msgid "department"
+msgstr "departamento"
+
+#: courses/models.py:28
+msgid "code"
+msgstr "código"
+
+#: courses/models.py:30
+#: enrollments/models.py:13
+#: plugins/genome_annotation/modelsdir/annotation.py:16
+#: plugins/genome_annotation/modelsdir/questions.py:15
+#: plugins/genome_annotation/modelsdir/questions.py:31
+#: plugins/genome_annotation/modelsdir/questions.py:44
+msgid "date added"
+msgstr "data de cadastro"
+
+#: courses/models.py:42
+#: enrollments/models.py:11
+#: plugins/calendar/models.py:17
+msgid "class"
+msgstr "curso"
+
+#: courses/models.py:42
+#: plugins/calendar/models.py:17
+msgid "classes"
+msgstr "cursos"
+
+#: courses/templates/courses/add_course.html:4
+msgid "Add Class"
+msgstr "Adicionar curso"
+
+#: courses/templates/courses/add_course.html:9
+#: courses/templates/courses/class_detail.html:9
+#: courses/templates/courses/list_classes.html:4
+#: courses/templates/courses/list_classes.html:10
+#: courses/templates/courses/list_classes.html:16
+#: enrollments/templates/enrollments/enrollment_success.html:9
+#: enrollments/templates/enrollments/instructor_dashboard.html:9
+#: enrollments/templates/enrollments/manage_enrollments.html:9
+#: enrollments/templates/enrollments/student_dashboard.html:9
+#: plugins/calendar/templates/calendar/add_class.html:10
+#: plugins/calendar/templates/calendar/instructor_list_classes.html:9
+#: plugins/calendar/templates/calendar/list_classes.html:9
+#: plugins/genome_annotation/templates/genome_annotation/add_question.html:10
+#: plugins/genome_annotation/templates/genome_annotation/enrollment.html:9
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:10
+#: plugins/genome_annotation/templates/genome_annotation/manage_questions.html:10
+#: plugins/genome_annotation/templates/genome_annotation/questions.html:10
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:9
+#: plugins/genome_annotation/templates/genome_annotation/video_tutorials.html:9
+msgid "Classes"
+msgstr "Cursos"
+
+#: courses/templates/courses/add_course.html:9
+#: plugins/calendar/templates/calendar/add_class.html:4
+#: plugins/calendar/templates/calendar/add_class.html:18
+#: plugins/calendar/templates/calendar/menu.html:4
+msgid "Add class"
+msgstr "Adicionar curso"
+
+#: courses/templates/courses/base_course.html:8
+msgid "Active class"
+msgstr "Curso ativo"
+
+#: courses/templates/courses/base_course.html:16
+#: courses/templates/courses/base_course.html:37
+msgid "Class dashboard"
+msgstr "Informações do curso"
+
+#: courses/templates/courses/base_course.html:17
+#: enrollments/templates/enrollments/manage_enrollments.html:15
+msgid "Manage enrollments"
+msgstr "Gerenciar matrículas"
+
+#: courses/templates/courses/base_course.html:23
+#: courses/templates/courses/base_course.html:43
+#: enrollments/templates/enrollments/instructor_stats.html:4
+#: enrollments/templates/enrollments/student_stats.html:4
+msgid "Statistics"
+msgstr "Estatísticas"
+
+#: courses/templates/courses/class_detail.html:4
+#: enrollments/templates/enrollments/instructor_dashboard.html:4
+#: enrollments/templates/enrollments/instructor_dashboard.html:36
+#: enrollments/templates/enrollments/manage_enrollments.html:4
+#: enrollments/templates/enrollments/manage_enrollments.html:25
+#: enrollments/templates/enrollments/student_dashboard.html:4
+#: enrollments/templates/enrollments/student_dashboard.html:45
+#: enrollments/templates/enrollments/emails/approved.html:5
+#: plugins/calendar/templates/calendar/instructor_list_classes.html:22
+#: plugins/calendar/templates/calendar/list_classes.html:22
+msgid "Class"
+msgstr "Curso"
+
+#: courses/templates/courses/class_detail.html:19
+msgid "More courses from"
+msgstr "Mais cursos de"
+
+#: courses/templates/courses/class_detail.html:23
+#: enrollments/templates/enrollments/instructor_dashboard.html:20
+#: enrollments/templates/enrollments/student_dashboard.html:29
+msgid "Class description"
+msgstr "Descrição do curso"
+
+#: courses/templates/courses/class_detail.html:33
+msgid "Sign up"
+msgstr "Matrícular"
+
+#: courses/templates/courses/class_detail.html:38
+msgid "You must be logged-in to attend this course"
+msgstr "Você deve estar logado para participar deste curso"
+
+#: courses/templates/courses/list_classes.html:20
+msgid "Show all institutions"
+msgstr "Mostrar todas instituições"
+
+#: courses/templates/courses/list_classes.html:24
+msgid "Please select a course below to continue:"
+msgstr "Por favor selecione um curso abaixo para continuar:"
+
+#: courses/templates/courses/list_classes.html:33
+msgid "Start date"
+msgstr "Data de início"
+
+#: courses/templates/courses/list_classes.html:43
+msgid "Details"
+msgstr "Detalhes"
+
+#: enrollments/decorators.py:12
+msgid "You are not currently enrolled in this class"
+msgstr "Você não está matriculado neste curso"
+
+#: enrollments/decorators.py:16
+msgid "Your subscription is waiting for approval"
+msgstr "Matrícula aguardando aprovação do professor. Você será avisado por e-mail quando for aprovado."
+
+#: enrollments/models.py:24
+#: plugins/genome_annotation/modelsdir/annotation.py:13
+msgid "enrollment"
+msgstr "matrícula"
+
+#: enrollments/models.py:24
+msgid "enrollments"
+msgstr "matrículas"
+
+#: enrollments/models.py:34
+#, python-format
+msgid "%s: Your enrollment has been approved"
+msgstr "%s: Sua matrícula ainda não foi aprovada"
+
+#: enrollments/views.py:79
+#, python-format
+msgid "Enrollment approved for \"%s\""
+msgstr "Matrícula aprovada para \"%s\""
+
+#: enrollments/views.py:87
+#, python-format
+msgid "Enrollment removed for \"%s\""
+msgstr "Matrícula removida para \"%s\""
+
+#: enrollments/templates/enrollments/already_enrolled.html:4
+msgid "You are already enrolled in this class"
+msgstr "Você já está matrículado neste curso"
+
+#: enrollments/templates/enrollments/already_enrolled.html:7
+msgid "You are already enrolled on this class"
+msgstr "Você já está matrículado neste curso"
+
+#: enrollments/templates/enrollments/already_enrolled.html:8
+#: enrollments/templates/enrollments/enrollment_success.html:15
+msgid "Click here to access your dashboard"
+msgstr "Clique aqui para acessar seu dashboard"
+
+#: enrollments/templates/enrollments/enrollment_success.html:4
+msgid "Success"
+msgstr "Sucesso"
+
+#: enrollments/templates/enrollments/enrollment_success.html:14
+msgid "You are now enrolled to this class"
+msgstr "Você foi matrículado neste curso"
+
+#: enrollments/templates/enrollments/instructor_dashboard.html:28
+#: enrollments/templates/enrollments/student_dashboard.html:37
+msgid "Students"
+msgstr "Alunos"
+
+#: enrollments/templates/enrollments/instructor_dashboard.html:28
+msgid "manage"
+msgstr "gerenciar"
+
+#: enrollments/templates/enrollments/instructor_dashboard.html:38
+#: enrollments/templates/enrollments/manage_enrollments.html:27
+msgid "Is approved?"
+msgstr "Aprovado?"
+
+#: enrollments/templates/enrollments/instructor_stats.html:9
+#: enrollments/templates/enrollments/instructor_stats.html:16
+#: enrollments/templates/enrollments/student_stats.html:9
+#: enrollments/templates/enrollments/student_stats.html:16
+msgid "Logged in time"
+msgstr "Tempo logado no sistema"
+
+#: enrollments/templates/enrollments/instructor_stats.html:14
+#: enrollments/templates/enrollments/student_stats.html:14
+#: plugins/genome_annotation/templates/genome_annotation/annotation_stats.html:14
+msgid "Student"
+msgstr "Aluno"
+
+#: enrollments/templates/enrollments/instructor_stats.html:15
+#: enrollments/templates/enrollments/student_stats.html:15
+msgid "Last login"
+msgstr "Último login em"
+
+#: enrollments/templates/enrollments/manage_enrollments.html:16
+msgid "Use the options below to accept ou remove students from this class."
+msgstr "Utilize as opções abaixo para aprovar ou remover as matrículas dos alunos neste curso."
+
+#: enrollments/templates/enrollments/manage_enrollments.html:40
+msgid "Approve"
+msgstr "Aprovar"
+
+#: enrollments/templates/enrollments/manage_enrollments.html:41
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:52
+#: plugins/genome_annotation/templates/genome_annotation/manage_questions.html:49
+#: plugins/genome_annotation/templates/genome_annotation/submission/authors.html:38
+#: plugins/genome_annotation/templates/genome_annotation/submission/institutions.html:33
+msgid "Remove"
+msgstr "Remover"
+
+#: enrollments/templates/enrollments/pending_approval.html:4
+#: enrollments/templates/enrollments/pending_approval.html:7
+msgid "Your subscription hasn't been approved yet"
+msgstr "Sua matrícula ainda não foi aprovada"
+
+#: enrollments/templates/enrollments/user_enrollments.html:7
+msgid "My courses "
+msgstr "Meus cursos"
+
+#: enrollments/templates/enrollments/user_enrollments.html:19
+#: plugins/calendar/templates/calendar/instructor_list_classes.html:24
+#: plugins/calendar/templates/calendar/list_classes.html:24
+msgid "Professor"
+msgstr "Professor"
+
+#: enrollments/templates/enrollments/emails/approved.html:6
+msgid "Message"
+msgstr "Mensagem"
+
+#: enrollments/templates/enrollments/emails/approved.html:6
+msgid "Your enrollment has been approved"
+msgstr "Sua matrícula foi aprovada"
+
+#: enrollments/templates/enrollments/emails/approved.html:12
+msgid "E-mail sent on"
+msgstr "E-mail enviado em"
+
+#: institutions/models.py:8
+msgid "short name"
+msgstr "sigla"
+
+#: institutions/models.py:13
+#: plugins/genome_annotation/modelsdir/submission.py:62
+msgid "institutions"
+msgstr "instituições"
+
+#: institutions/models.py:25
+msgid "departments"
+msgstr "departamentos"
+
+#: institutions/views.py:24
+msgid "Institution added"
+msgstr "Instituição cadastrada"
+
+#: institutions/views.py:41
+msgid "Department added"
+msgstr "Departamento cadastrado"
+
+#: institutions/templates/institutions/add_department.html:4
+#: institutions/templates/institutions/add_department.html:10
+msgid "Add department"
+msgstr "Adicionar departamento"
+
+#: institutions/templates/institutions/add_institution.html:4
+#: institutions/templates/institutions/add_institution.html:9
+msgid "Add institution"
+msgstr "Adicionar instituição"
+
+#: institutions/templates/institutions/list_institutions.html:18
+msgid "Please select an institution below"
+msgstr "Por favor selecione uma instituição abaixo"
+
+#: institutions/templates/institutions/list_institutions.html:25
+msgid "Location"
+msgstr "Localização"
+
+#: institutions/templates/institutions/list_institutions.html:34
+msgid "List courses"
+msgstr "Listar cursos"
+
+#: plugins/models.py:12
+msgid "plugin"
+msgstr "plugin"
+
+#: plugins/models.py:12
+msgid "plugins"
+msgstr "plugins"
+
+#: plugins/calendar/models.py:11
+msgid "title"
+msgstr "título"
+
+#: plugins/calendar/models.py:12
+msgid "professor"
+msgstr "professor"
+
+#: plugins/calendar/models.py:13
+msgid "date"
+msgstr "data"
+
+#: plugins/calendar/models.py:14
+msgid "class room"
+msgstr "sala de aula"
+
+#: plugins/calendar/plugin.py:7
+#: plugins/calendar/templates/calendar/add_class.html:11
+#: plugins/calendar/templates/calendar/instructor_list_classes.html:4
+#: plugins/calendar/templates/calendar/instructor_list_classes.html:10
+#: plugins/calendar/templates/calendar/instructor_list_classes.html:17
+#: plugins/calendar/templates/calendar/list_classes.html:4
+#: plugins/calendar/templates/calendar/list_classes.html:10
+#: plugins/calendar/templates/calendar/list_classes.html:17
+msgid "Calendar"
+msgstr "Calendário"
+
+#: plugins/calendar/views.py:50
+#, python-format
+msgid "Class \"%s\" added"
+msgstr "Curso \"%s\" adicionado"
+
+#: plugins/calendar/templates/calendar/instructor_list_classes.html:23
+#: plugins/calendar/templates/calendar/list_classes.html:23
+msgid "Date"
+msgstr "Data"
+
+#: plugins/calendar/templates/calendar/instructor_list_classes.html:25
+#: plugins/calendar/templates/calendar/list_classes.html:25
+msgid "Classroom"
+msgstr "Sala de aula"
+
+#: plugins/calendar/templates/calendar/instructor_list_classes.html:37
+#: plugins/calendar/templates/calendar/list_classes.html:37
+msgid "No events found"
+msgstr "Nenhum item encontrado"
+
+#: plugins/calendar/templates/calendar/menu.html:5
+#: plugins/calendar/templates/calendar/menu.html:7
+msgid "Show events"
+msgstr "Mostrar eventos"
+
+#: plugins/genome_annotation/plugin.py:7
+msgid "Activities"
+msgstr "Atividades"
+
+#: plugins/genome_annotation/views.py:37
+msgid "Enrollment completed"
+msgstr "Matrícula completada"
+
+#: plugins/genome_annotation/views.py:87
+msgid "File type not allowed"
+msgstr "Tipo de arquivo não aceito"
+
+#: plugins/genome_annotation/views.py:89
+msgid "Answer saved"
+msgstr "Resposta salva"
+
+#: plugins/genome_annotation/views.py:141
+msgid "Question added"
+msgstr "Pergunta adicionada"
+
+#: plugins/genome_annotation/views.py:168
+msgid "Question modified"
+msgstr "Pergunta modificada"
+
+#: plugins/genome_annotation/views.py:204
+msgid "Question removed"
+msgstr "Pergunta removida"
+
+#: plugins/genome_annotation/views.py:260
+msgid "Annotation saved"
+msgstr "Anotação salva"
+
+#: plugins/genome_annotation/views.py:383
+msgid "Title modified"
+msgstr "Título modificado"
+
+#: plugins/genome_annotation/views.py:423
+msgid "Institution added or modified"
+msgstr "Instituição adicionada ou modificada"
+
+#: plugins/genome_annotation/views.py:453
+msgid "Institution removed"
+msgstr "Instituição removida"
+
+#: plugins/genome_annotation/views.py:483
+msgid "Author added or modified"
+msgstr "Autor adicionado ou modificado"
+
+#: plugins/genome_annotation/views.py:513
+msgid "Author removed"
+msgstr "Autor removido"
+
+#: plugins/genome_annotation/views.py:534
+msgid "Resume modified"
+msgstr "Resumo modificada"
+
+#: plugins/genome_annotation/modelsdir/annotation.py:14
+#: plugins/genome_annotation/modelsdir/projects.py:15
+#: plugins/genome_annotation/modelsdir/questions.py:12
+msgid "project"
+msgstr "projeto"
+
+#: plugins/genome_annotation/modelsdir/annotation.py:15
+#: plugins/genome_annotation/modelsdir/contigs.py:31
+#: plugins/genome_annotation/modelsdir/contigs.py:45
+msgid "tissue"
+msgstr "tecido"
+
+#: plugins/genome_annotation/modelsdir/annotation.py:20
+msgid "plugin enrollment"
+msgstr "matrícula do plugin"
+
+#: plugins/genome_annotation/modelsdir/annotation.py:20
+msgid "plugin enrollments"
+msgstr "matrículas do plugin"
+
+#: plugins/genome_annotation/modelsdir/annotation.py:48
+msgid "Validated"
+msgstr "Validado"
+
+#: plugins/genome_annotation/modelsdir/annotation.py:49
+msgid "Excluded"
+msgstr "Excluído"
+
+#: plugins/genome_annotation/modelsdir/annotation.py:50
+msgid "To review"
+msgstr "Rever"
+
+#: plugins/genome_annotation/modelsdir/annotation.py:69
+msgid "annotation"
+msgstr "anotação"
+
+#: plugins/genome_annotation/modelsdir/annotation.py:69
+msgid "annotations"
+msgstr "anotações"
+
+#: plugins/genome_annotation/modelsdir/contigs.py:21
+msgid "symbol"
+msgstr "symbol"
+
+#: plugins/genome_annotation/modelsdir/contigs.py:22
+msgid "type"
+msgstr "tipo"
+
+#: plugins/genome_annotation/modelsdir/contigs.py:31
+msgid "tissues"
+msgstr "tecidos"
+
+#: plugins/genome_annotation/modelsdir/contigs.py:54
+msgid "contig"
+msgstr "contig"
+
+#: plugins/genome_annotation/modelsdir/contigs.py:54
+msgid "contigs"
+msgstr "contigs"
+
+#: plugins/genome_annotation/modelsdir/projects.py:10
+msgid "description"
+msgstr "descrição"
+
+#: plugins/genome_annotation/modelsdir/projects.py:15
+msgid "projects"
+msgstr "projetos"
+
+#: plugins/genome_annotation/modelsdir/questions.py:13
+#: plugins/genome_annotation/modelsdir/questions.py:20
+msgid "question"
+msgstr "pergunta"
+
+#: plugins/genome_annotation/modelsdir/questions.py:14
+msgid "order"
+msgstr "ordem"
+
+#: plugins/genome_annotation/modelsdir/questions.py:20
+msgid "questions"
+msgstr "perguntas"
+
+#: plugins/genome_annotation/modelsdir/questions.py:35
+msgid "answer"
+msgstr "resposta"
+
+#: plugins/genome_annotation/modelsdir/questions.py:35
+msgid "answers"
+msgstr "respostas"
+
+#: plugins/genome_annotation/modelsdir/questions.py:48
+msgid "user file"
+msgstr "arquivo"
+
+#: plugins/genome_annotation/modelsdir/questions.py:48
+msgid "files"
+msgstr "arquivos"
+
+#: plugins/genome_annotation/modelsdir/submission.py:19
+msgid "submission"
+msgstr "submissão"
+
+#: plugins/genome_annotation/modelsdir/submission.py:19
+msgid "submissions"
+msgstr "submissões"
+
+#: plugins/genome_annotation/modelsdir/submission.py:29
+msgid "Your resume has been submitted"
+msgstr "Seu resumo foi submetido"
+
+#: plugins/genome_annotation/modelsdir/submission.py:72
+msgid "Eg: SILVA-JR, WA"
+msgstr "Ex.: SILVA-JR, WA"
+
+#: plugins/genome_annotation/modelsdir/submission.py:73
+msgid "e-mail"
+msgstr "e-mail"
+
+#: plugins/genome_annotation/modelsdir/submission.py:74
+msgid "ordering"
+msgstr "ordem"
+
+#: plugins/genome_annotation/modelsdir/submission.py:79
+msgid "author"
+msgstr "autor"
+
+#: plugins/genome_annotation/modelsdir/submission.py:79
+msgid "authors"
+msgstr "autores"
+
+#: plugins/genome_annotation/templates/genome_annotation/_blastn.html:5
+#: plugins/genome_annotation/templates/genome_annotation/_blastn.html:8
+#: plugins/genome_annotation/templates/genome_annotation/_blastx.html:5
+#: plugins/genome_annotation/templates/genome_annotation/_blastx.html:8
+#: plugins/genome_annotation/templates/genome_annotation/_blat.html:5
+#: plugins/genome_annotation/templates/genome_annotation/_blat.html:8
+msgid "Processing, please wait..."
+msgstr "Processando, por favor aguarde"
+
+#: plugins/genome_annotation/templates/genome_annotation/add_question.html:4
+#: plugins/genome_annotation/templates/genome_annotation/add_question.html:13
+#: plugins/genome_annotation/templates/genome_annotation/add_question.html:19
+msgid "Add question"
+msgstr "Adicionar pergunta"
+
+#: plugins/genome_annotation/templates/genome_annotation/add_question.html:12
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:11
+#: plugins/genome_annotation/templates/genome_annotation/manage_questions.html:12
+#: plugins/genome_annotation/templates/genome_annotation/manage_questions.html:29
+#: plugins/genome_annotation/templates/genome_annotation/questions.html:11
+msgid "Questions"
+msgstr "Perguntas"
+
+#: plugins/genome_annotation/templates/genome_annotation/annotation_stats.html:4
+#: plugins/genome_annotation/templates/genome_annotation/annotation_stats.html:9
+#: plugins/genome_annotation/templates/genome_annotation/menu.html:5
+msgid "Annotation stats"
+msgstr "Estatísticas de anotação"
+
+#: plugins/genome_annotation/templates/genome_annotation/annotation_stats.html:15
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:38
+msgid "Project"
+msgstr "projeto"
+
+#: plugins/genome_annotation/templates/genome_annotation/annotation_stats.html:16
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:26
+msgid "Progress"
+msgstr "Progresso"
+
+#: plugins/genome_annotation/templates/genome_annotation/annotation_stats.html:17
+#: plugins/genome_annotation/templates/genome_annotation/submission/base.html:63
+msgid "Resume"
+msgstr "Resumo"
+
+#: plugins/genome_annotation/templates/genome_annotation/enrollment.html:4
+#: plugins/genome_annotation/templates/genome_annotation/enrollment.html:10
+#: plugins/genome_annotation/templates/genome_annotation/enrollment.html:16
+msgid "Project and tissue selection"
+msgstr "Seleção de projeto e tecido"
+
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:4
+#: plugins/genome_annotation/templates/genome_annotation/manage_questions.html:4
+msgid "Manage questions"
+msgstr "Gerenciar perguntas"
+
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:17
+msgid "Projects"
+msgstr "projetos"
+
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:24
+msgid "Add project"
+msgstr "Adicionar projeto"
+
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:31
+msgid "Manage"
+msgstr "gerenciar"
+
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:32
+msgid "Select a project to add or modify questions."
+msgstr "Selecione um projeto para adicionar ou modificar perguntas."
+
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:39
+#: plugins/genome_annotation/templates/genome_annotation/manage_questions.html:37
+msgid "Date added"
+msgstr "data de cadastro"
+
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:50
+msgid "View questions"
+msgstr "ver perguntas"
+
+#: plugins/genome_annotation/templates/genome_annotation/manage_projects.html:51
+#: plugins/genome_annotation/templates/genome_annotation/manage_questions.html:48
+#: plugins/genome_annotation/templates/genome_annotation/submission/authors.html:13
+#: plugins/genome_annotation/templates/genome_annotation/submission/institutions.html:12
+msgid "Modify"
+msgstr "Modificar"
+
+#: plugins/genome_annotation/templates/genome_annotation/manage_questions.html:18
+#: plugins/genome_annotation/templates/genome_annotation/menu.html:8
+#: plugins/genome_annotation/templates/genome_annotation/questions.html:4
+#: plugins/genome_annotation/templates/genome_annotation/questions.html:17
+msgid "Project questions"
+msgstr "Perguntas do projeto"
+
+#: plugins/genome_annotation/templates/genome_annotation/manage_questions.html:35
+msgid "Index"
+msgstr "Índice"
+
+#: plugins/genome_annotation/templates/genome_annotation/manage_questions.html:36
+msgid "Question"
+msgstr "Pergunta"
+
+#: plugins/genome_annotation/templates/genome_annotation/menu.html:4
+msgid "Projects and questions"
+msgstr "Projetos e perguntas"
+
+#: plugins/genome_annotation/templates/genome_annotation/menu.html:7
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:10
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:22
+msgid "Gene annotation"
+msgstr "Anotação gênica"
+
+#: plugins/genome_annotation/templates/genome_annotation/menu.html:9
+#: plugins/genome_annotation/templates/genome_annotation/video_tutorials.html:4
+#: plugins/genome_annotation/templates/genome_annotation/video_tutorials.html:10
+#: plugins/genome_annotation/templates/genome_annotation/video_tutorials.html:16
+msgid "Video tutorials"
+msgstr "Vídeo tutoriais"
+
+#: plugins/genome_annotation/templates/genome_annotation/menu.html:10
+#: plugins/genome_annotation/templates/genome_annotation/submission/base.html:7
+msgid "Submission"
+msgstr "Submissão"
+
+#: plugins/genome_annotation/templates/genome_annotation/questions.html:21
+msgid "Please answer the questions below."
+msgstr "Por favor responda as perguntas abaixo."
+
+#: plugins/genome_annotation/templates/genome_annotation/questions.html:37
+msgid "Uploaded files"
+msgstr "Arquivos enviados"
+
+#: plugins/genome_annotation/templates/genome_annotation/questions.html:45
+msgid "File"
+msgstr "Arquivo"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:4
+msgid "Contig Validation"
+msgstr "Validação de contig"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:48
+msgid "Show"
+msgstr "Mostrar"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:61
+msgid "Status"
+msgstr "Status"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:62
+msgid "Cluster name"
+msgstr "Nome do cluster"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:78
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:156
+msgid "Paralog"
+msgstr "Parálogo"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:79
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:157
+msgid "Ortolog"
+msgstr "Ortologo"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:80
+msgid "Alternative splicing"
+msgstr "Splicing alternativo"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:107
+msgid "Cluster"
+msgstr "Cluster"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:108
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:121
+msgid "ESTs"
+msgstr "ESTs"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:112
+msgid "Frequency"
+msgstr "Frequência"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:113
+msgid "Bases"
+msgstr "Bases"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:118
+msgid "Consensus"
+msgstr "Consenso"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:118
+msgid "Show sequence"
+msgstr "Mostrar sequência"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:118
+msgid "Hide"
+msgstr "Esconder"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:125
+msgid "Tools"
+msgstr "Ferramentas"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:135
+msgid "Annotation"
+msgstr "Anotação"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:138
+msgid "Symbol"
+msgstr "Symbol"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:139
+msgid "GeneMap"
+msgstr "GeneMap"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:142
+msgid "RefSeq"
+msgstr "RefSeq"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:143
+msgid "Unigene"
+msgstr "Unigene"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:147
+msgid "Analysis"
+msgstr "Análise"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:155
+msgid "SNP"
+msgstr "SNP"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:158
+msgid "Alternative Splicing"
+msgstr "Splicing Alternativo"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:162
+msgid "Notes"
+msgstr "Observações"
+
+#: plugins/genome_annotation/templates/genome_annotation/validate_contig.html:168
+msgid "Save and load next"
+msgstr "Salvar e carregar o próximo"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/authors.html:6
+msgid "3. Authors"
+msgstr "3. Autores"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/authors.html:7
+#: plugins/genome_annotation/templates/genome_annotation/submission/institutions.html:7
+#: plugins/genome_annotation/templates/genome_annotation/submission/resume.html:7
+#: plugins/genome_annotation/templates/genome_annotation/submission/title.html:7
+msgid "Next step"
+msgstr "Próximo passo"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/authors.html:13
+msgid "Add new author"
+msgstr "Adicionar autor"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/authors.html:18
+#: plugins/genome_annotation/templates/genome_annotation/submission/institutions.html:17
+#: plugins/genome_annotation/templates/genome_annotation/submission/resume.html:18
+#: plugins/genome_annotation/templates/genome_annotation/submission/title.html:17
+msgid "Save"
+msgstr "Salvar"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/authors.html:26
+msgid "Author"
+msgstr "Autor"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/authors.html:28
+msgid "Ordering"
+msgstr "Ordem"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/authors.html:37
+#: plugins/genome_annotation/templates/genome_annotation/submission/institutions.html:32
+msgid "Edit"
+msgstr "Editar"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/authors.html:38
+#: plugins/genome_annotation/templates/genome_annotation/submission/institutions.html:33
+msgid "Are you sure?"
+msgstr "Tem certeza?"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/authors.html:42
+#: plugins/genome_annotation/templates/genome_annotation/submission/institutions.html:37
+msgid "Empty set"
+msgstr "Sem registros"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/base.html:43
+msgid "Paper submission"
+msgstr "Submissão de artigo"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/base.html:50
+msgid "close"
+msgstr "fechar"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/base.html:58
+msgid "To submit your paper complete the following steps:"
+msgstr "Para submeter seu artigo, complete os passos abaixo:"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/base.html:60
+msgid "Title"
+msgstr "Título"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/base.html:62
+msgid "Authors"
+msgstr "Autores"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/base.html:64
+#: plugins/genome_annotation/templates/genome_annotation/submission/submit.html:13
+msgid "Submit"
+msgstr "Submeter"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/institutions.html:6
+msgid "2. Institutions"
+msgstr "2. Instituições"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/institutions.html:12
+msgid "Add new institution"
+msgstr "Adicionar instituição"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/resume.html:6
+msgid "4. Resume"
+msgstr "4. Resumo"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/resume.html:13
+msgid "Edit resume"
+msgstr "Editar resumo"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/sent.html:6
+msgid "Submission sent"
+msgstr "Resumo submetido"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/sent.html:10
+msgid "Your submission has been sent and is waiting for instructor's approval. It no longer can be modified."
+msgstr "Seu resumo foi submetido com sucesso e está aguardando aprovação do responsável pela disciplina. O resumo não pode mais ser modificado."
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/sent.html:12
+msgid "Click here to download your resume"
+msgstr "Clique aqui para fazer o download do seu resumo"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/submit.html:6
+msgid "5. Submit"
+msgstr "5. Submeter"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/submit.html:11
+msgid "Click here to preview your submission"
+msgstr "Clique aqui para pré-visualizar sua submissão"
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/submit.html:13
+msgid ""
+"Are you sure? \\n"
+"You will not be able to modify your resume after submitted."
+msgstr ""
+"Deseja mesmo submeter seu resumo? \\n"
+"Você não poderá modificar após submeter o resumo."
+
+#: plugins/genome_annotation/templates/genome_annotation/submission/title.html:6
+msgid "1. Title"
+msgstr "1. Título"
+
+#: templates/base.html:44
+msgid "Welcome back"
+msgstr "Seja bem-vindo"
+
+#: templates/base.html:45
+msgid "Last login on"
+msgstr "Último login em"
+
+#: templates/base.html:49
+msgid "Preferences"
+msgstr "Preferências"
+
+#: templates/base.html:63
+msgid "Sign in"
+msgstr "Entrar"
+
+#: templates/base.html:66
+msgid "Forgot password?"
+msgstr "Esqueceu a senha?"
+
+#: templates/base.html:101
+msgid "Language"
+msgstr "Idioma"
+
+#: templates/base.html:103
+msgid "Portuguese"
+msgstr "Português"
+
+#: templates/base.html:104
+msgid "English"
+msgstr "Inglês"
+
+#: templates/base_form.html:8
+msgid "Please fill the form below"
+msgstr "Por favor preencha o formulário abaixo"
+
+#: templates/base_form.html:19
+#: templates/forms/form_incl.html:10
+msgid "Continue"
+msgstr "Continuar"
+
+#: templates/forms/errors.html:5
+msgid "Please correct the following fields:"
+msgstr "Por favor corrija os seguintes campos:"
+
+#: util/views.py:26
+#, python-format
+msgid "The %(verbose_name)s was created successfully."
+msgstr "The %(verbose_name)s was created successfully."
+
+#~ msgid "Find a course"
+#~ msgstr "Procurar um curso"
+
+#~ msgid "Course added"
+#~ msgstr "Curso adicionado"
+
+#~ msgid "Courses"
+#~ msgstr "Cursos"
+
+#~ msgid "Course"
+#~ msgstr "Curso"
+
+#~ msgid "add a new one"
+#~ msgstr "cadastre uma nova"
+
+#~ msgid "Submissions are not available yet"
+#~ msgstr "Submissões ainda não estão liberadas"
+
+#~ msgid "choice"
+#~ msgstr "alternativa"
+
+#~ msgid "choices"
+#~ msgstr "alternativas"
+
+#~ msgid "\"%(question)s\" answered by %(user)s"
+#~ msgstr "\"%(question)s\" respondido por %(user)s"
+
+#~ msgid "Tests"
+#~ msgstr "Testes"
+
+#, fuzzy
+#~ msgid ""
+#~ "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+#~ "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim "
+#~ "veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea "
+#~ "commodo consequat. "
+#~ msgstr ""
+#~ "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+#~ "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim "
+#~ "veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea "
+#~ "commodo consequat. "
+
+#~ msgid "Contig"
+#~ msgstr "Contig"

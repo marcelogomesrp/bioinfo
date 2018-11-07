@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+	<h1>{{ object.name }}</h1>
+
+    <p>
+    	All data related to {{ object.name }}
+	</p>
+	
+	<p>
+		<a href="{% url list_classes_by_institution object.id %}">View available courses</a>
+	</p>
+{% endblock content %}

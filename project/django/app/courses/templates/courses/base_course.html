@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block course_menu %}
+	{% if class and class.instructor == user %}
+		<section id="current-course">
+			<section class="course-id">
+				{% trans "Active class" %}: <h2>{{ class.code.upper }}</h2>
+			</section>
+			<h2 class="course-name">{{ class.name }}</h2>
+			<h3 class="professor-name">{{ class.instructor.get_full_name }}</h3>
+		</section>
+
+		<nav id="course-menu" class="hor-menu">
+			<ul>
+				<li><a href="{% url instructor_dashboard class.id %}">{% trans "Class dashboard" %}</a></li>
+				<li><a href="{% url manage_enrollments class.id %}">{% trans "Manage enrollments" %}{% with class.pending_users.count as pending_users_count %}{% if pending_users_count %} ({{ pending_users_count }}){% endif %}{% endwith %}</a></li>
+				{% for plugin in class.active_plugins %}
+					<li>{{ plugin.verbose_name }}
+						{% include plugin.menu_template %}
+					</li>
+				{% endfor %}
+				<li><a href="{% url instructor_stats class.id %}">{% trans "Statistics" %}</a></li>
+			</ul>
+		</nav>
+	{% else %}
+		<section id="current-course">
+			<section class="course-id">
+				Active course: <h2>{{ class_enrollment.course_class.code.upper }}</h2>
+			</section>
+			<h2 class="course-name">{{ class_enrollment.course_class.name }}</h2>
+			<h3 class="professor-name">{{ class_enrollment.course_class.instructor.get_full_name }}</h3>
+		</section>
+
+		<nav id="course-menu" class="hor-menu">
+			<ul>
+				<li><a href="{% url enrollment_dashboard class_enrollment.id %}">{% trans "Class dashboard" %}</a></li>
+				{% for plugin in class_enrollment.course_class.active_plugins %}
+					<li>{{ plugin.verbose_name }}
+						{% include plugin.menu_template %}
+					</li>
+				{% endfor %}
+				<li><a href="{% url student_stats class_enrollment.id %}">{% trans "Statistics" %}</a></li>
+			</ul>
+		</nav>
+	{% endif %}
+
+{% endblock %}

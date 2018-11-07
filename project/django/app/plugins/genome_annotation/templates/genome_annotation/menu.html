@@ -1,0 +1,21 @@
+{% load i18n %}
+<ul>
+	{% if class and class.instructor == user %}
+		<li><a href="{% url genome_annotation_manage_projects class.id %}">{% trans "Projects and questions" %}</a></li>	
+		<li><a href="{% url genome_annotation_annotation_stats class.id %}">{% trans "Annotation stats" %}</a></li>	
+	{% else %}
+	    <li><a href="{% url genome_annotation_validation class_enrollment.id %}">{% trans "Gene annotation" %}</a></li>
+		<li><a href="{% url genome_annotation_questions class_enrollment.id %}">{% trans "Project questions" %}</a></li>	
+		<li><a href="{% url genome_annotation_video_tutorials class_enrollment.id %}">{% trans "Video tutorials" %}</a></li>
+	    <li><a id="submit-paper" href="{% url genome_annotation_submission class_enrollment.id %}">{% trans "Submission" %}</a></li>
+	    
+	    <script type="text/javascript"> 
+        $('a#submit-paper').popupWindow({ 
+            height:550, 
+            width:850, 
+            top:50, 
+            left:50 
+        });
+        </script>
+	{% endif %}
+</ul>

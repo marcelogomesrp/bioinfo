@@ -1,0 +1,53 @@
+{% extends 'courses/base_course.html' %}
+{% load i18n pagination_tags ga_tags %}
+
+{% block page_title %}{% trans "Project questions" %}{% endblock %}
+
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; 
+		<a href="{% url home %}">{% trans "Classes" %}</a> &rsaquo; 
+		<a href="#">{{ course_enrollment.course.name }}</a> &rsaquo; {% trans "Questions" %}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<header>
+		<h1>{% trans "Project questions" %}</h1>
+		<h2>{{ plugin_enrollment.project }}</h2>
+	</header>
+	
+	<p>{% trans "Please answer the questions below." %}</p>
+
+	
+	<section id="question-list">
+		{% for q in question_list %}
+			{% get_answer plugin_enrollment.id q.id %}
+			<div class="question {% if answer.id %}done{% else %}pending{% endif %}">
+				<form enctype="multipart/form-data" action="" method="post">
+					{% csrf_token %}
+					<h3><span>{{ forloop.counter }}</span> {{ q.text|safe|linebreaksbr }}</h3>
+					<div class="answer">
+						<input type="hidden" name="question_id" value="{{ q.id }}">
+						<textarea name="answer_{{ q.id }}">{{ answer.text }}</textarea>
+						<div class="attached-files">
+							{% with answer.userfile_set.all as files %}
+								{% if files %}								
+									<h4>{% trans "Uploaded files" %}</h4>
+									<ul>
+										{% for f in files %}
+											<li>{{ f.filename }} <i>enviado em {{ f.date_added|date:"d/m/Y H:i:s" }}</i><a href="{{ f.file.url }}" target="_blank">Download</a></li>
+										{% endfor %}
+									</ul>
+								{% endif %}
+							{% endwith %}
+							<label for="file-{{ q.id }}">{% trans "File" %}:</label> <input id="file-{{ q.id }}" type="file" name="file" />
+						</div>
+						<input class="save" type="image" src="{{ STATIC_URL }}img/bt/save.gif" />
+					</div>
+				</form>
+			</div>
+		{% endfor %}
+	</section>
+{% endblock %}

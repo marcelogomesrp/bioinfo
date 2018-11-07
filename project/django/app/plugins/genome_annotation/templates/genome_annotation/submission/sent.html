@@ -1,0 +1,15 @@
+{% extends "genome_annotation/submission/base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <header>
+        <h2>{% trans "Submission sent" %}</h2>        
+    </header>
+
+    <form method="post" action="">
+        {% trans "Your submission has been sent and is waiting for instructor's approval. It no longer can be modified." %}
+        <br/><br/><br/>
+        <a class="pdf-download" target="_blank" href="{% url genome_annotation_submission_pdf_preview class_enrollment.id plugin_enrollment.id %}">{% trans "Click here to download your resume" %}</a>
+        
+    </form>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Institutions" %}{% endblock %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; {% trans "Institutions" %}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<header>
+		<h1>{% trans "Institutions" %}</h1>
+	</header>
+
+    <p>
+        {% trans "Please select an institution below" %}.
+    </p>
+
+    <table class="default-table" cellspacing="0" cellpading="0">
+		<thead>
+			<tr>
+				<th>{% trans "Institution" %}</th>
+				<th>{% trans "Location" %}</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+	        {% for i in object_list %}
+	            <tr>
+					<td>{{ i.name }}</td>
+					<td>{{ i.city }}-{{ i.state }}</td>
+					<td><a class="view-link" href="{% url list_classes_by_institution i.id %}">{% trans "List courses" %}</a></td>
+				</tr>
+	        {% endfor %}		
+		</tbody>
+    </table>
+{% endblock content %}

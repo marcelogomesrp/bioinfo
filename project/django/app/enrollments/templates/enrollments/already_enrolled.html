@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans "You are already enrolled in this class" %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "You are already enrolled on this class" %}</h1>    
+    <p><a class="back" href="{% url home %}">{% trans "Click here to access your dashboard" %}</a></p>
+
+{% endblock %}

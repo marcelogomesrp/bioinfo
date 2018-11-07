@@ -1,0 +1,11 @@
+{% extends 'base_form.html' %}
+{% load i18n %}
+
+{% block content_title %}{% trans "Add institution" %}{% endblock %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; 
+		<a href="#">{% trans "Institutions" %}</a> &rsaquo; {% trans "Add institution" %}
+	</nav>
+{% endblock %}

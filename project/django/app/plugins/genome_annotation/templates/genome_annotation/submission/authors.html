@@ -1,0 +1,49 @@
+{% extends "genome_annotation/submission/base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <header>
+        <h2>{% trans "3. Authors" %}</h2>
+        <a class="next-step" href="{% url genome_annotation_submission_resume class_enrollment.id plugin_enrollment.id %}">{% trans "Next step" %} &raquo;</a>
+        
+    </header>
+    
+    <form method="post" action="">
+        {% csrf_token %}
+        <h3>{% if not author %}{% trans "Add new author" %}{% else %}{% trans "Modify" %}{% endif %}</h3>
+        <ul>
+            {{ form.as_ul }}
+        </ul>
+        <div class="submit-row">
+            <input type="submit" value="{% trans "Save" %}" />
+        </div>
+    </form>
+    
+    {% if not author %}
+        <section class="object_list">
+            <table class="default-table">
+                <tr>
+                    <th>{% trans "Author" %}</th>
+                    <th>{% trans "Institution" %}</th>
+                    <th>{% trans "Ordering" %}</th>
+                    <th class="action"></th>
+                    <th class="action"></th>
+                </tr>
+                {% for a in submission.author_set.all %}
+                    <tr>
+                        <td>{{ a.name }}</td>
+                        <td>{{ a.institution }}</td>
+                        <td>{{ a.ordering }}</td>
+                        <td><a class="modify" href="{% url genome_annotation_submission_authors class_enrollment.id plugin_enrollment.id a.id %}">{% trans "Edit" %}</a></td>
+                        <td><a class="remove" onclick="return confirm('{% trans "Are you sure?" %}')" href="{% url genome_annotation_submission_remove_author class_enrollment.id plugin_enrollment.id a.id %}">{% trans "Remove" %}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="6"><em>{% trans "Empty set" %}</em></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </section>
+        
+    {% endif %}
+{% endblock %}

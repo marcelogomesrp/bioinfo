@@ -1,0 +1,60 @@
+{% extends 'courses/base_course.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Class" %}: {{ class_enrollment.course_class.name  }}{% endblock %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; 
+		<a href="#">{% trans "Classes" %}</a> &rsaquo; {{ class_enrollment.course_class.name }}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<header>
+    	<h1>{{ class_enrollment.course_class.name }}: {% trans "Dashboard" %}</h1>    
+    </header>
+
+	<section class="course-info content-module">
+		<header>
+			<h1>{% trans "Instructor" %}</h1>
+		</header>
+		<p>
+			{{ class_enrollment.course_class.instructor.get_full_name }} ({{ class_enrollment.course_class.instructor.email }})
+		</p>
+	</section>
+
+    <section class="content-module">
+		<header>
+			<h3>{% trans "Class description" %}</h3>
+		</header>
+        <p>{{ class_enrollment.course_class.short_description|linebreaksbr }} </p>
+    </section>
+
+
+	<section class="course-info content-module">
+		<header>
+			<h1>{% trans "Students" %}</h1>
+		</header>
+
+		<table cellspacing="0" cellpadding="0" class="default-table">
+			<thead>
+				<tr>
+					<th>{% trans "Name" %}</th>
+					<td>{% trans "Institution" %}</td>
+					<td>{% trans "Class" %}</td>
+				</tr>
+			</thead>
+			<tbody>
+				{% for u in class_enrollment.course_class.enrolled_users %}
+					<tr>
+						<td>{{ u.get_full_name }}</td>
+						<td>{{ u.get_profile.institution_name }}</td>
+						<td>{{ u.get_profile.course }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+    
+{% endblock %}

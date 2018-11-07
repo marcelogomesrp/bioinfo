@@ -1,0 +1,131 @@
+{% load i18n %}
+<!doctype html>
+	
+<html lang="pt-br">
+	
+<head>
+	<title>{% block page_title %}{% endblock %} | Bioinfo Online</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="" /> 
+	<meta name="keywords" content="" /> 
+	<meta name="author" content="Renato Garcia Pedigoni" />
+	<!--[if IE]><script src="{{ STATIC_URL }}js/html5.js"></script><![endif]--> 
+	<!--[if IE 7]><script src="{{ STATIC_URL }}js/IE8.js"></script><![endif]-->
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/uniform.default.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.tooltip.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.wysiwyg.css" type="text/css" media="screen" charset="utf-8" />
+	<script type="text/javascript" charset="utf-8">
+		SITE_URL = '{{ SITE_URL }}';
+	</script>
+	<script src="{{ STATIC_URL }}js/jquery-1.4.2.min.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/html5-hacks.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/jquery.uniform.min.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/jquery.tooltip.min.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/popup.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/jquery.wysiwyg.js" type="text/javascript"></script>
+	<!--[if IE 6]>
+      <script src="{{ STATIC_URL }}js/utils/ie6.png.fix.js" type="text/javascript"></script>
+      <script src="{{ STATIC_URL }}js/utils/ie6.flicker.fix.js" type="text/javascript"></script>
+      <script src="{{ STATIC_URL }}js/utils/png.fix.elements.js" type="text/javascript"></script>
+    <![endif]-->
+	<script src="{{ STATIC_URL }}js/bioinfo.js" type="text/javascript"></script>
+	{% block extra_js %}{% endblock %}
+</head>
+
+<body>
+	<header id="page-top">
+		<h1 class="logo"><a href="{% url home %}"></a></h1>
+		{% block login_container %}	
+			{% if user.is_authenticated %}
+				<section id="logged-in-user">			
+					<hgroup>
+						<h1>{% trans "Welcome back" %}, <span>{{ user.first_name }}</span></h1>
+						<h2>{% trans "Last login on" %} {{ user.last_login|date:"d/m/Y" }} {{ user.last_login|date:"H:i" }}</h2>
+					</hgroup>
+					<a href="{% url logout %}" class="sign-out">Sign out</a>
+					<ul class="links">
+						<li><a href="#">{% trans "Preferences" %}</a></li>
+						<li class="has-sep"><a href="{% url change_password %}">{% trans "Change password" %}</a></li>
+					</ul>
+				</section>
+			{% else %}
+				<section id="login-section">
+					<form action="{% url login %}" method="post" accept-charset="utf-8">
+						{% csrf_token %}
+						<fieldset>
+							<ul>					
+								<li><label for="id-login-username">{% trans "Username" %}</label> <input type="text" name="username" id="id-login-username" /></li>
+								<li><label for="id-login-password">{% trans "Password" %}</label> <input type="password" name="password" id="id-login-password" /></li>
+							</ul>
+						</fieldset>
+						<input type="submit" class="submit" value="{% trans "Sign in" %}" />
+						<ul class="links">
+							<li><a href="{% url registration %}">{% trans "Registration" %}</a></li>
+							<li class="has-sep"><a href="">{% trans "Forgot password?" %}</a></li>
+						</ul>
+					</form>
+				</section>
+			{% endif %}
+		{% endblock login_container %}					
+	</header>
+
+	{% block course_menu %}
+		
+	{% endblock %}
+	
+	<div class="gray-bar"> </div>
+	
+	{% block breadcrumbs %}{% endblock %}
+	
+	{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+				<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} <span class="close">X close</span></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	<section id="content">
+		{% block content %}
+			
+		{% endblock content %}
+	</section>
+
+	<footer id="page-bottom">
+		<section id="lang-selection">
+			<form action="{% url change_language %}" method="post">
+				{% csrf_token %}
+				
+				<h5>{% trans "Language" %}:</h5>
+				<input id="next-lang" type="hidden" name="language" value="pt" />
+				<img id="lang-pt-br" border="0" src="{{ STATIC_URL }}img/br.png" alt="{% trans "Portuguese" %}" />
+				<img id="lang-en-us" border="0" src="{{ STATIC_URL }}img/us.png" alt="{% trans "English" %}" />
+			</form>
+		</section>
+		
+		<img src="{{ STATIC_URL }}img/sponsors.jpg" alt="Sponsors" />
+	</footer>
+	
+	{% if user.is_authenticated %}
+		<script type="text/javascript" charset="utf-8">
+			fnctl = function(key){
+				if(key===undefined) var key = '{{ user.get_profile.get_logged_in_time_hash }}';
+				$.post("{% url update_logged_in_time %}", {
+						'key': key, 'enrollment_id': {% firstof class_enrollment.id enrollment.id enrollment_id '""' %}},
+					function(responseText){
+						var key =  responseText;
+						setTimeout('fnctl("'+ key +'")', {{ LOGGED_IN_TIME_DELTA }}*1000);
+					});
+			
+			}
+			setTimeout('fnctl()', {{ LOGGED_IN_TIME_DELTA }}*1000);
+		</script>
+	{% endif %}
+
+	
+
+	{% csrf_token %}
+</body>
+</html>

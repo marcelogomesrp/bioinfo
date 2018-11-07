@@ -1,0 +1,131 @@
+header#page-top {
+    background:url(../img/bg/page_top.gif) repeat-x bottom left;
+    height:89px;
+}
+
+header#page-top h1.logo {
+    background:url(../img/logo.gif);
+    height:72px;
+    float:left;
+    margin:7px 0 0 23px;
+    width:257px;
+}
+
+section#logged-in-user {
+    float:right;
+    font-size:0.6em;
+    height:52px;
+    margin:20px 20px 0 0;
+    width:256px;
+}
+
+section#logged-in-user hgroup {
+    float:left;
+    margin:0 10px 0 0;
+    text-align:right;
+    width:170px;
+}
+
+section#logged-in-user hgroup h1 {
+    font-size:1.3em;
+}
+
+section#logged-in-user hgroup h1 span {
+    color:#537da1;
+    font-weight:bold;
+}
+
+
+section#logged-in-user hgroup h2 {
+    color:#999;
+    font-size:1.1em;
+    font-style:italic;
+}
+
+section#logged-in-user a.sign-out {
+    background:url(../img/bt/sign_out.gif) no-repeat 0 0;
+    display:block;
+    float:right;
+    height:20px;
+    margin:7px 0 0 0;
+    text-indent:-9999px;
+    width:63px;
+}
+
+section#logged-in-user a.sign-out:hover {
+    background-position:0 -20px;
+}
+
+section#logged-in-user ul.links {
+    clear:both;
+    float:right;
+    margin:5px 0 0 0;
+}
+
+section#logged-in-user ul.links li {
+    float:left;
+    font-size:1.2em;
+    margin-left:20px;
+}
+
+section#logged-in-user ul.links li.has-sep {
+    list-style-type:disc !important;
+}
+
+section#current-course {
+    background:url(../img/bg/current_course.gif) repeat-x;
+    font-size:1.0em;
+    height:36px;
+    margin:1px 0 0 0;
+    padding:7px 23px 7px 23px;
+}
+
+section#current-course section.course-id {
+    float:left;
+    font-size:0.7em;
+    width:90px;
+}
+
+section#current-course section.course-id h2 {
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+section#current-course .course-name {
+    color:#91aec6;
+    font-size:0.90em;
+    font-weight:bold;
+    padding:1px 0 0 0;
+}
+
+section#current-course .professor-name {
+    font-size:0.75em;
+}
+nav.hor-menu {
+    border-top:1px solid #d0d0d0;
+    border-bottom:1px solid #d0d0d0;
+    height:28px;
+}    
+nav.hor-menu ul {
+    clear:both;
+}
+
+nav.hor-menu ul li {
+    background:url(../img/bg/hor_menu.jpg) no-repeat top left;
+    border-right:1px solid #d0d0d0;
+    height:16px;
+    font-size:0.80em;
+    float:left;
+    padding:7px 10px 5px 15px;
+}
+
+nav.hor-menu ul li:hover {
+    background-position:0 -28px;
+}
+
+footer#page-bottom {
+    border-top:1px solid #d0d0d0;
+    padding:10px;
+    margin:10px 0 0 0;
+    text-align:right;
+}

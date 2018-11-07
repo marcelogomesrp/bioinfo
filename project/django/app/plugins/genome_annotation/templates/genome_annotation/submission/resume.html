@@ -1,0 +1,66 @@
+{% extends "genome_annotation/submission/base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <header>
+        <h2>{% trans "4. Resume" %}</h2>
+        <a class="next-step" href="{% url genome_annotation_submission_submit class_enrollment.id plugin_enrollment.id %}">{% trans "Next step" %} &raquo;</a>
+        
+    </header>
+    
+    <form method="post" action="">
+        {% csrf_token %}
+        <h3>{% trans "Edit resume" %}</h3>
+
+        <textarea id="id_text" name="text">{{ submission.text|default:"" }}</textarea>
+        
+        <div class="submit-row">
+            <input type="submit" value="{% trans "Save" %}" />
+        </div>
+    </form>
+    
+    <style type="text/css" media="screen">
+        .separator { display:none; }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+		$(document).ready(function(){
+			$("#id_text").wysiwyg({
+			    controls: {
+			        bold: { visible: true },
+                    italic: { visible: true },
+                    strikeThrough: { visible: false, separator: false },
+                    underline: { visible: true },
+                    justifyLeft: { visible: false, separator: false },
+                    justifyCenter: { visible: false, separator: false },
+                    justifyRight: { visible: false, separator: false },
+                    justifyFull: { visible: false, separator: false },
+                    indent: { visible: false, separator: false },
+                    outdent: { visible: false, separator: false },
+                    subscript: { visible: false, separator: false },
+                    superscript: { visible: false, separator: false },
+                    undo: { visible: false, separator: false },
+                    redo: { visible: false, separator: false },
+                    insertOrderedList: { visible: false, separator: false },
+                    insertUnorderedList: { visible: false, separator: false },
+                    insertHorizontalRule: { visible: false, separator: false },
+                    createLink: { visible: true },
+                    insertImage: { visible: false, separator: false },
+                    h1mozilla: { visible: false, separator: false },
+                    h2mozilla: { visible: false, separator: false },
+                    h3mozilla: { visible: false, separator: false },
+                    h1: { visible: false, separator: false },
+                    h2: { visible: false, separator: false },
+                    h3: { visible: false, separator: false },
+                    cut: { visible: false, separator: false },
+                    copy: { visible: false, separator: false },
+                    paste: { visible: false, separator: false },
+                    increaseFontSize: { visible: false, separator: false },
+                    decreaseFontSize: { visible: false, separator: false },
+                    html: { visible: true },
+                    removeFormat: { visible: true },
+                    insertTable: { visible: false, separator: false },
+			    }
+			});
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block page_title  %}{% trans "Classes" %}: {{ institution.name }}{% endblock %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo;
+		<a href="{% url list_institutions %}">{% trans "Institutions" %}</a> &rsaquo;
+		<a href="{% url view_institution institution.id %}">{{ institution.short_name }}</a> &rsaquo;  {% trans "Classes" %}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<header>
+    	<h1>{% trans "Classes" %} from <span class="strong">{{ institution.name }}</span></h1>  
+    </header>
+	
+	<p>
+        <a class="back" href="{% url list_institutions %}">{% trans "Show all institutions" %}</a>
+    </p>
+
+    <p>
+        {% trans "Please select a course below to continue:" %}  
+    </p>
+
+
+    <table class="default-table" cellspacing="0" cellpading="0">
+		<thead>
+			<tr>
+				<th>{% trans "Class name" %}</th>
+				<th>{% trans "Instructor" %}</th>
+				<th>{% trans "Start date" %}</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+	        {% for i in object_list %}
+	            <tr>
+					<td>{{ i.name }}</td>
+					<td>{{ i.instructor.get_full_name }}</td>
+					<td>{{ i.start_date|date:"d/m/Y" }}</td>
+					<td><a class="view-link" href="{% url class_detail i.id %}">{% trans "Details" %}</a></td>
+				</tr>
+	        {% endfor %}		
+		</tbody>
+    </table>
+{% endblock content %}

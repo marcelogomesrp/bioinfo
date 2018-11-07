@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block page_title %}Home{% endblock %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; {% trans "Dashboard" %}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<header>
+		<h1>{% trans "Welcome" %}</h1>
+	</header>
+	<p>
+		Seja bem vindo ao Bioinfo Online. Nesta página você tem acesso aos cursos em que está matrículado. Para buscar um novo curso <a href="{% url list_institutions %}">clique aqui</a>.
+	</p>
+	
+	<div id="user-dashboard">
+		{% with user.enrollment_set.all as enrollments %}
+			{% if enrollments %}
+				<section class="enrolled-courses">
+					<header>
+						<h1>{% trans "Classes I'm enrolled in" %}</h1>
+					</header>
+					<table cellspacing="0" cellpading="0" class="default-table">
+						<thead>
+							<tr>
+								<th>{% trans "Class name" %}</th>
+								<th>{% trans "Instructor" %}</th>
+								<th>{% trans "Class start date" %}</th>
+								<th>{% trans "Enrollment date" %}</th>
+								<th>{% trans "Approved?" %}</th>
+								<th class="action-col"></th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for e in enrollments  %}
+								<tr>
+									<td><span class="superscript">{{ e.course_class.code|upper }}</span> {{ e.course_class.name }}</td>
+									<td>{{ e.course_class.instructor.get_full_name }}</td>
+									<td>{{ e.course_class.start_date|date:"d/m/Y" }}</td>
+									<td>{{ e.date_added|date:"d/m/Y" }}</td>
+									<td>{{ e.is_approved|yesno|title }}</td>
+									<td>{% if e.is_approved %}<a class="view-link" href="{% url enrollment_dashboard e.id %}">{% trans "View" %}</a>
+									{% else %}
+									<i style="font-size:11px;color:red">{% trans "Pending" %}</i>
+									{% endif %}</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</section>
+			
+			{% endif %}
+		{% endwith %}
+		
+		
+		{% with user.class_set.all as teaching_courses %}
+			{% if teaching_courses %}
+				<section class="enrolled-courses">
+					<header>
+						<h1>{% trans "Classes I'm teaching" %}</h1>
+					</header>
+					<table cellspacing="0" cellpading="0" class="default-table">
+						<thead>
+							<tr>
+								<th>{% trans "Course name" %}</th>
+								<th>{% trans "Enrolled students" %}</th>
+								<th>{% trans "Pending students" %}</th>
+								<th>{% trans "Class start date" %}</th>
+								<th class="action-col"></th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for e in teaching_courses  %}
+								<tr>
+									<td><span class="superscript">{{ e.code|upper }}</span> {{ e.name }}</td>
+									<td>{{ e.enrolled_users.count }}</td>
+									<td>{{ e.pending_users.count }}</td>
+									<td>{{ e.start_date|date:"d/m/Y" }}</td>
+									<td><a class="view-link" href="{% url instructor_dashboard e.id %}">{% trans "View" %}</a></td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</section>
+			
+			{% endif %}
+		{% endwith %}
+		
+		<section class="available-courses">
+			<header>
+				<h1>{% trans "Find a class to attend" %}</h1>
+			</header>
+			<a class="add-link" href="{% url list_institutions %}">{% trans "Search for available classes" %}</a>
+		</section>
+	</div>
+{% endblock content %}

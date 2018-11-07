@@ -1,0 +1,11 @@
+{% load i18n %}
+<form action="{% url login %}" method="post" accept-charset="utf-8">
+	{% csrf_token %}
+	<fieldset class="default-ul-form">
+		<ul>					
+			<li><label for="id-login-username">{% trans "Username" %}</label> <input type="text" name="username" id="id-login-username" /></li>
+			<li><label for="id-login-password">{% trans "Password" %}</label> <input type="password" name="password" id="id-login-password" /></li>
+		</ul>
+	</fieldset>
+	<p><input type="submit" value='{% trans "Sign In" %} &rarr;' /></p>
+</form>

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block page_title %}Home{% endblock %}
+
+
+{% block content %}
+    <header>
+        <h1>{% trans "Welcome" %}</h1>
+    </header>
+    <p>
+        O curso de Bioinformática Online  tem como objetivo central discutir e trabalhar com os fundamentos das principais ferramentas de bioinformática. 
+        O material que será analisado foi gerado pelo Projeto Genoma Humano do Câncer Brasileiro. Um projeto financiado pela FAPESP e pelo Instituto Ludwig para a Pesquisa do Câncer. 
+        <br/><br/>A metodologia aplicada no curso fará com que o aluno siga um roteiro definido por um projeto, onde será usado um conjunto de ferramentas essenciais para a solução de problemas que surgem na rotina de um laboratório de biologia molecular. 
+        O aluno terá a opção de escolher um projeto, dos cinco que serão oferecidos. Cada projeto terá um objetivo específico.
+    </p>
+
+    <p>
+        <br/>
+        O curso foi desenvolvido pelo grupo de bioinformática do Laboratório de Genética Molecular e Bioinformática da FMRP/USP, Hemocentro de Ribeirão Preto.  
+    </p>
+    
+    
+    <div class="home-institutions">
+        <h2 class="title-2">{% trans "Institutions that have used this course" %}</h2>
+        <ul>
+            {% for i in institutions %}
+                <li><span>{{ i.name }}</span> - {% for d in i.department_set.all %}{{ d.name }}{% endfor %}</li>
+            {% endfor %}
+        </ul>
+        
+        <a class="registration-link" href="{% url registration %}">{% trans "Sign up now to get access" %}</a>
+    </div>
+    
+{% endblock content %}

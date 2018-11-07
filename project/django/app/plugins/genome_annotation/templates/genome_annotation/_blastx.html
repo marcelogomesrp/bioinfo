@@ -1,0 +1,28 @@
+{% load i18n %}
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>{% trans "Processing, please wait..." %}</title>
+</head>
+<body>
+	<p>{% trans "Processing, please wait..." %}</p>
+
+	<form method='post' action='http://www.ncbi.nlm.nih.gov/blast/Blast.cgi'>
+		<input type='hidden' name='QUERY' value="{{ contig.sequence }}">
+		<input type='hidden' name='PROGRAM' value='blastx'>
+		<input type='hidden' name='PAGE' value='Translations'>
+		<input type='hidden' name='AUTO_FORMAT' value='Fullauto'>
+
+		<span style='display: none'>
+			<input type='checkbox' name='SHOW_OVERVIEW' checked>
+			<input type='checkbox' name='SHOW_LINKOUT' checked>
+			<input type='checkbox' name='GET_SEQUENCE' checked>
+			<input type='checkbox' name='NCBI_GI' checked>
+		</span>
+	</form>
+
+	<script type="text/javascript" charset="utf-8">
+		document.forms[0].submit();
+	</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% load i18n %}
+<ul>
+	{% if class and class.instructor == user %}
+        <li><a href="{% url calendar_add_class class.id %}">{% trans "Add class" %}</a></li>
+        <li><a href="{% url calendar_instructor_list_classes class.id %}">{% trans "Show events" %}</a></li>
+	{% else %}
+	    <li><a href="{% url calendar_list_classes class_enrollment.id %}">{% trans "Show events" %}</a></li>
+	{% endif %}
+</ul>

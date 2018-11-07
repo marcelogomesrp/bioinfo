@@ -1,0 +1,20 @@
+{% extends "genome_annotation/submission/base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <header>
+        <h2>{% trans "1. Title" %}</h2>
+        <a class="next-step" href="{% url genome_annotation_submission_institutions class_enrollment.id plugin_enrollment.id %}">{% trans "Next step" %} &raquo;</a>
+        
+    </header>
+    
+    <form method="post" action="">
+        {% csrf_token %}
+        <ul>
+            {{ form.as_ul }}
+        </ul>
+        <div class="submit-row">
+            <input value="{% trans "Save" %}" type="submit" />
+        </div>
+    </form>
+{% endblock %}

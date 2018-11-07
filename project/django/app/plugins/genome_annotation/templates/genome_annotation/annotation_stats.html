@@ -1,0 +1,32 @@
+{% extends 'courses/base_course.html' %}
+{% load i18n timefunc %}
+
+{% block page_title %}{% trans "Annotation stats" %}{% endblock %}
+
+{% block content %}
+	<section class="enrolled-courses">
+		<header>
+			<h1>{% trans "Annotation stats" %}</h1>
+		</header>
+		<table cellspacing="0" cellpading="0" class="default-table">
+			<thead>
+				<tr>
+					<th>{% trans "Student" %}</th>
+					<th>{% trans "Project" %}</th>
+					<th>{% trans "Progress" %}</th>
+					<th>{% trans "Resume" %}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for p in plugin_enrollments  %}
+					<tr>
+						<td>{{ p.enrollment.user.get_full_name }}</td>
+						<td>{{ p.project.name }}</td>
+						<td>{{ p.annotated_perc }}%</td>
+						<td>{% if p.get_last_submission %}<a class="pdf-button" href="{{ p.get_last_submission.pdf_url }}" target="_blank"></a>{% else %}-{% endif %}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+{% endblock %}

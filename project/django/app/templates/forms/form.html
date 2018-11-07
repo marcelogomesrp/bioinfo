@@ -1,0 +1,3 @@
+{% for field in form %}
+	<li{% if field.errors %} class="error"{% endif %}>{{ field.label_tag }} {{ field }}</li>
+{% endfor %}		

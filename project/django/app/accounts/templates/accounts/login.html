@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Login" %}{% endblock %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; {% trans "Login" %}
+	</nav>
+{% endblock %}
+
+{% block login_container %}{% endblock %}
+
+{% block content %}
+	<header>
+		<h1>{% trans "Login" %}</h1>
+	</header>
+		
+	{% if invalid %}
+		<h2>{% trans "Invalid login" %}</h2>
+		<p>
+			{% trans "Wrong username or password" %}
+		</p>
+	{% endif %}
+
+	<p>
+		{% include "accounts/includes/form_login.html" %}
+	</p>
+{% endblock content %}

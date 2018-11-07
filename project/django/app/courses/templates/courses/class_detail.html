@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Class" %}: {{ object.name  }}{% endblock %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; 
+		<a href="#">{% trans "Classes" %}</a> &rsaquo; {{ object.name }}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<header>
+    	<h1>{{ object.name }}</h1>    
+	</header>
+
+    <p>
+		<a class="back" href="{% url list_classes_by_institution object.institution.id %}">{% trans "More courses from" %} {{ object.institution.name }}</a>
+	</p>
+    <section class="content-module">
+		<header>
+			<h3>{% trans "Class description" %}</h3>
+		</header>
+        <p>{{ object.short_description|linebreaksbr }} </p>
+    </section>
+    
+    {% if user.is_authenticated %}
+        <form action="{% url class_detail object.id %}" method="POST">
+        {% csrf_token %}
+            <p>
+		<br/>
+                <input type="image" src="{{ STATIC_URL }}img/bt/enroll.png" value="{% trans "Sign up" %}" />
+            </p>
+         </form>
+    {% else %}
+        <p>
+            <a href="{% url login %}?next={% url class_detail object.id %}">{% trans "You must be logged-in to attend this course" %}</a>  
+        </p>
+    {% endif %}
+{% endblock %}

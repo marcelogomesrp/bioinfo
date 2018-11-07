@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Registration" %}{% endblock %}
+
+{% block extra_js %}
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.mask.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function(){
+			$("#id_0-birth_date").mask("99/99/9999");
+			$("#id_0-enrollment_year").mask("9999");	
+		});
+	</script>
+{% endblock extra_js %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; {% trans "Registration" %}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<header>
+		<h1>{% trans "Registration form" %}</h1>
+	</header>
+	
+	{% block steps %}{% endblock %}
+	
+	<form action="{% url registration %}" class="default-ul-form" method="post" accept-charset="utf-8">
+		{% csrf_token %}		
+		{% include "forms/errors.html" %}
+		
+		<ul>
+			{% include "forms/form.html" %}
+		</ul>
+
+		<input type="hidden" name="{{ step_field }}" value="{{ step0 }}" />
+		{{ previous_fields|safe }}
+
+		<p><input type="submit" value="Continue &rarr;"></p>
+	</form>
+{% endblock content %}

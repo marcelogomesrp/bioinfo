@@ -1,0 +1,44 @@
+{% extends "genome_annotation/submission/base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <header>
+        <h2>{% trans "2. Institutions" %}</h2>
+        <a class="next-step" href="{% url genome_annotation_submission_authors class_enrollment.id plugin_enrollment.id %}">{% trans "Next step" %} &raquo;</a>
+    </header>
+    
+    <form method="post" action="">
+        {% csrf_token %}
+        <h3>{% if not institution %}{% trans "Add new institution" %}{% else %}{% trans "Modify" %}{% endif %}</h3>
+        <ul>
+            {{ form.as_ul }}
+        </ul>
+        <div class="submit-row">
+            <input type="submit" value="{% trans "Save" %}" />
+        </div>
+    </form>
+    
+    {% if not institution %}
+        <section class="object_list">
+            <table class="default-table">
+                <tr>
+                    <th>{% trans "Institution" %}</th>
+                    <th class="action"></th>
+                    <th class="action"></th>
+                </tr>
+                {% for i in submission.institution_set.all %}
+                    <tr>
+                        <td>{{ i.name }}</td>
+                        <td><a class="modify" href="{% url genome_annotation_submission_institutions class_enrollment.id plugin_enrollment.id i.id %}">{% trans "Edit" %}</a></td>
+                        <td><a class="remove" onclick="return confirm('{% trans "Are you sure?" %}')" href="{% url genome_annotation_submission_remove_institution class_enrollment.id plugin_enrollment.id i.id %}">{% trans "Remove" %}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="3"><em>{% trans "Empty set" %}</em></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </section>
+        
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'accounts/base_wizard.html' %}
+{% load i18n %}
+
+{% block steps %}
+	<ul id="registration_steps">
+		<li class="current"><span>1.</span> {% trans "Personal information" %}</li>
+		<li><span>2.</span> {% trans "Login information" %}</li>
+	</ul>
+{% endblock steps %}

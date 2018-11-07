@@ -1,0 +1,216 @@
+body {
+    margin:10px;
+    font-size:13px;
+}
+
+body > header {
+    background:url("../../img/bg/page_top.gif") repeat-x scroll left bottom transparent;
+    height:40px;
+}
+
+.top-border {
+    margin:1px 0 0 0;
+    border-top:4px solid #eee;
+}
+
+body > header h1 {
+    color:#236ECD;
+    margin:0 0 0 13px;
+}
+
+
+#wrapper {
+    clear:both;
+    margin-top:10px;
+}
+
+#wrapper > nav {
+    float:left;
+    margin-right:30px;
+    width:144px;
+}
+
+#wrapper > nav p {
+    color:#777;
+    font-size:11px;
+    margin-bottom:10px;
+}
+
+#wrapper > nav ul {
+    border:1px solid #e0e0e0;
+    border-bottom:none;
+}
+
+#wrapper > nav ul li span {
+    color:#236ECD;
+    font-size:13px;
+    font-weight:bold;
+    margin-right:5px;
+}
+
+#wrapper > nav ul li {
+    border-bottom:1px solid #e0e0e0;
+    padding:5px 10px 5px 10px;
+}
+
+#wrapper > nav ul li:hover {
+    background:#e0e0e0;
+}
+
+section.content {
+    float:left;
+    border:1px solid #e0e0e0;
+    padding:17px;
+    width:600px;
+}
+
+section.content > header {
+    background:none repeat scroll 0 0 #F5F5F5;
+    height:28px;
+    margin:-17px -17px 15px;
+    padding:7px 0 4px 10px;
+}
+
+section.content > header h2 {
+    color:#666;
+    width:300px;
+    float:left;
+}
+
+input[type=text] {
+    width:260px;
+}
+
+form {
+    border:1px solid #e0e0e0;
+    padding:10px;
+}
+
+form label {
+    color:#000;
+    float:left;
+    display:block;
+    width:70px;
+}
+
+form > h3 {
+    font-weight:bold;
+    font-size:12px;
+    margin-bottom:10px;
+}
+
+form div.submit-row {
+    border-top:1px solid #e0e0e0;
+    clear:both;
+    margin:10px -10px 0 -10px;
+    padding:10px 10px 0 10px;
+}
+
+.errorlist {
+    color:red;
+}
+
+.object_list {
+    margin:10px 0 0 0;
+}
+
+form > ul > li {
+    margin:3px 0 1px 0;
+    color:#999;
+}
+
+#id_title {
+    width:400px;
+}
+
+#id_ordering {
+    width:20px;
+}
+
+.default-table {
+    border:1px solid #e0e0e0;
+    padding:10px;
+    width:100%;
+}
+
+.default-table th {
+    text-align:left;
+    font-weight:bold;
+    color:#766;
+}
+
+.default-table td {
+    border-top:1px solid #e0e0e0;
+    height:25px;
+}
+
+.default-table .action {
+    width:80px;
+}
+.default-table .remove {
+    background:url(../../img/remove.png) no-repeat scroll 3px center #FFFFFF;
+    font-size:11px;
+    padding:3px 5px 3px 24px;
+}
+
+.default-table .modify {
+    background:url(../../img/modify.png) no-repeat scroll 3px center #FFFFFF;
+    font-size:11px;
+    padding:3px 5px 3px 24px;
+}
+
+.default-table .remove:hover, .default-table .modify:hover {
+    color:#ccc;
+}
+
+
+#id_text {
+    height:270px;
+    width:90%;
+}
+
+.next-step {
+    color:#236ECD;
+    float:right;
+    width:120px;
+    text-align:right;
+    font-size:11px;
+    margin-top:5px;
+    margin-right:10px;
+}
+
+.messages  {
+background:none repeat scroll 0 0 #FFFDBF;
+border-bottom:1px solid #D0D0D0;
+padding:3px 8px 0;
+}
+.messages li {
+color:#8F8D47;
+font-size:12px;
+padding:3px 3px 3px 20px;
+}
+.messages li.info {
+background:url("../../img/ok.png") no-repeat scroll 0 1px transparent;
+}
+.messages li.error {
+background:url("../../img/error.png") no-repeat scroll 0 1px transparent;
+}
+.messages .close {
+background:none repeat scroll 0 0 #E5E3AB;
+cursor:pointer;
+display:block;
+float:right;
+font-size:10px;
+padding:2px;
+text-align:center;
+width:40px;
+}
+.messages .close:hover {
+background:none repeat scroll 0 0 #EBEBEB;
+color:#333333;
+}
+
+.pdf-download {
+    background:url(../../img/pdf.gif) no-repeat top left;
+    padding-left:26px;
+}

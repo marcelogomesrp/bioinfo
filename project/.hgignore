@@ -1,0 +1,15 @@
+syntax: glob
+.DS_Store
+*.pyc
+temp.db
+app/static/*
+app/media/*
+app/local_settings.py
+pip-log.txt
+_env/*
+*.orig
+compiled/*.js
+compiled/*.css
+*.tmproj
+.livereload
+hcgp_est/*

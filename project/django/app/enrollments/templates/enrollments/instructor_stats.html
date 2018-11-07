@@ -1,0 +1,30 @@
+{% extends 'courses/base_course.html' %}
+{% load i18n timefunc %}
+
+{% block page_title %}{% trans "Statistics" %}{% endblock %}
+
+{% block content %}
+	<section class="enrolled-courses">
+		<header>
+			<h1>{% trans "Logged in time" %}</h1>
+		</header>
+		<table cellspacing="0" cellpading="0" class="default-table">
+			<thead>
+				<tr>
+					<th>{% trans "Student" %}</th>
+					<th>{% trans "Last login" %}</th>
+					<th>{% trans "Logged in time" %}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for c in class.enrollment_set.all  %}
+					<tr>
+						<td>{{ c.user.get_full_name }}</td>
+						<td>{{ c.user.last_login|date:"d/m/Y H:i:s" }}</td>
+						<td>{{ c.logged_in_time|seconds_to_time }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+{% endblock %}

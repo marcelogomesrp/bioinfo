@@ -1,0 +1,12 @@
+{% load i18n %}
+{{ enrollment.user.get_full_name }},
+
+-----------------------------------------------------------------------------
+{% trans "Class" %}: {{ enrollment.class.code|upper }} - {{ enrollment.class.name }}
+{% trans "Message" %}: {% trans "Your enrollment has been approved" %}
+-----------------------------------------------------------------------------
+
+BioInfo Online
+http://lgmb.fmrp.usp.br/bioinfo_v2/
+
+{% trans "E-mail sent on" %} {% now "d/m/Y H:i:s" %}

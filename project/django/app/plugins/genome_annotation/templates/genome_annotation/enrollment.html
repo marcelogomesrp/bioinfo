@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Project and tissue selection" %}{% endblock %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; 
+		<a href="{% url home %}">{% trans "Classes" %}</a> &rsaquo; 
+		<a href="#">{{ course_enrollment.course.name }}</a> &rsaquo; {% trans "Project and tissue selection" %}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<header>
+		<h1>{% trans "Project and tissue selection" %}</h1>
+	</header>
+	
+	{% block steps %}{% endblock %}
+	
+	<form action="" class="default-ul-form" method="post" accept-charset="utf-8">
+		{% csrf_token %}		
+		{% include "forms/errors.html" %}
+		
+		<ul>
+			{% include "forms/form.html" %}
+		</ul>
+
+		<input type="hidden" name="{{ step_field }}" value="{{ step0 }}" />
+		{{ previous_fields|safe }}
+
+		<p><input type="submit" value="Continue &rarr;"></p>
+	</form>
+{% endblock content %}

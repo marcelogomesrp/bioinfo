@@ -1,0 +1,114 @@
+{% load ga_tags %}
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>BiT SNP</title>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+	
+	<style type="text/css" media="screen">
+		.over1 {
+			width:238px;
+			float:left;
+			overflow:auto;
+			border-right:1px solid #ededed;
+		}
+		.over2 {
+			width:600px;
+			overflow:auto;
+		}
+
+		.t {
+			background:none repeat scroll 0 0 #f3f3f3;
+			color:#f3f3f3;
+		}
+		.p {
+			color:#ccc;
+		}
+		.m {
+			background:yellow;
+			color:red;
+		}
+		.a1 {
+			background:#f3f3f3;
+		}
+		.a2 {
+			background:#fff;
+		}
+		.th {
+			width:200px;
+		}
+	</style>
+</head>
+<body id="_bit_snp">
+	<h2>BiT SNP</h2>
+	
+	<div class="over1">
+		<table border="0">
+			<tbody style="text-align: right;">
+				<tr>
+					<td class="th"><pre>INDEX</pre></td>
+				</tr>
+				<tr>
+					<td class="th"><pre>CONSENSUS</pre></td>
+				</tr>
+				{% for read in reads %}
+					<tr>
+						<td class="th"><pre>{{ read.name }}</pre></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+
+	<div class="over2">
+		<table border="0">
+			<tr>
+				<td><pre>{% for r in ref %}{% ifchanged r %}{% if not forloop.first %}</span>{% endif %}<span {% if r == '.' %}class="t"{% endif %}>{% endifchanged %}{{ r }}{% if forloop.last %}</span>{% endif %}{% endfor %}</pre></td>
+			</tr>
+			<tr>
+				<td><pre>{{ consensus }}</pre></td>
+			</tr>
+			{% for read in reads %}
+				<tr>
+					<td><pre>{% for base in read.bases %}{% ifchanged base %}{% if not forloop.first %}</span>{% endif %}<span class='{% if base == "-" %}t{% else %}{% if base == "." %}p{% else %}m{% endif %}{% endif %}'>{% if forloop.last %}</span>{% endif %}{% endifchanged %}{{ base }}{% endfor %}</pre></td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+	
+	<h3>BLAT</h3>
+	Start index: <input type="text" value="1" id="start_index" />
+	End index: <input type="text" value="{{ consensus|length }}" id="end_index" />
+	
+	<input type="hidden" value="{{ consensus }}" id="reference" />
+	
+	<input type="button" onclick="submit();" value="Submit query" / >
+	
+	<form target="_blank" id="frm" method='post' action='http://genome.ucsc.edu/cgi-bin/hgBlat'>
+	   <input type='hidden' name='org' value='Human'>
+	   <input type='hidden' name='db' value='hg18'>
+
+	   <input type='hidden' name='type' value='DNA'>
+	   <input type='hidden' name='sort' value='query,score'>
+	   <input type='hidden' name='output' value='hyperlink'>
+	   <input type='hidden' id="userseq" name='userSeq' value='{{ consensus }}'>
+	</form>
+	
+	<script type="text/javascript" charset="utf-8">
+		function submit(){
+			var start_index = parseInt($("#start_index").val());
+			if(start_index > 0) start_index--;
+			var end_index = parseInt($("#end_index").val());
+			if((end_index-start_index)<=24){
+				alert('You must select at least 25 bases');
+				return;
+			}
+
+			var consensus = $("#reference").val().substring(start_index, end_index);
+			$("#userseq").val(consensus);
+			$("#frm").submit();		
+		}
+	</script>
+</body>
+</html>

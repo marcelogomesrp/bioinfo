@@ -1,0 +1,55 @@
+{% extends 'courses/base_course.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Class" %}: {{ class.name  }}{% endblock %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; 
+		<a href="#">{% trans "Classes" %}</a> &rsaquo; {{ class.name }}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<header>
+    	<h1>{{ class.name }}: {% trans "Dashboard" %}</h1>    
+    </header>
+
+    <section class="content-module">
+		<header>
+			<h3>{% trans "Class description" %}</h3>
+		</header>
+        <p>{{ class.short_description|linebreaksbr }} </p>
+    </section>
+
+
+	<section class="course-info content-module">
+		<header>
+			<h3>{% trans "Students" %} <a class="h1-link" href="{% url manage_enrollments class.id %}">({% trans "manage" %})</a></h3>
+		</header>
+
+		<table cellspacing="0" cellpadding="0" class="default-table">
+			<thead>
+				<tr>
+					<th>{% trans "Name" %}</th>
+					<td>{% trans "Institution" %}</td>
+					<td>{% trans "Class" %}</td>
+					<td>{% trans "Enrollment date" %}</td>
+					<td>{% trans "Is approved?" %}</td>
+				</tr>
+			</thead>
+			<tbody>
+				{% for e in class.enrollment_set.select_related.all %}
+					<tr{% if not e.is_approved %} class="highlight"{% endif %}>
+						<td>{{ e.user.get_full_name }}</td>
+						<td>{{ e.user.get_profile.institution_name }}</td>
+						<td>{{ e.user.get_profile.course }}</td>
+						<td>{{ e.date_added|date:"d/m/Y \à\s H:i:s" }}</td>
+						<td>{{ e.is_approved|yesno|title }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+    
+{% endblock %}

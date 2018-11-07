@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+
+{% block content %}
+	<h1>{% trans "Accounts" %}</h1>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaccount. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	
+	<table class="default-table">
+		<tr>
+			<th>{% trans "Name" %}</th>
+			<th>{% trans "Institution" %}</th>
+			<th>{% trans "E-mail" %}</th>
+			<th>{% trans "Registration date" %}</th>
+			<th>{% trans "Is active" %}</th>
+		</tr>
+		{% for account in object_list %}
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td><a href="#">{{ account.get_full_name }}</a></td>
+				<td>{{ account.get_profile.institution_name }} - {{ account.get_profile.institution_city }}/{{ account.get_profile.institution_state }}</td>
+				<td>{{ account.email }}</td>
+				<td>{{ account.date_joined|date:"d/M/Y" }}</td>
+				<td>{{ account.is_active }}</td>
+			</tr>	
+		{% endfor %}
+	</table>
+	
+{% endblock content %}

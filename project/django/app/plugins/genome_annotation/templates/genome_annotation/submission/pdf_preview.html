@@ -1,0 +1,26 @@
+{% load i18n %}
+<html>
+<head>
+    <title></title>
+</head>
+<body onload="document.getElementById('frm').submit();">
+    <div style="display:none">
+        <form id="frm" action="http://143.107.223.168/pdfrender" method="POST"> 
+            <input type="text" value="{{ submission.title }}" name="abstract_title"><br> 
+            <textarea name="abstract_authors"> 
+                {% for author in authors %}
+                    {{ author.name }}<sup>{{ author.index }}</sup>{% if not forloop.last %}; {% endif %}
+                {% endfor %}
+            </textarea>
+            <textarea name="abstract_institutions">
+                {% for institution in institutions %}
+                    <sup>{{ forloop.counter }}</sup> {{ institution.name }}{% if not forloop.last %}; {% endif %}
+                {% endfor %}
+            </textarea> 
+        
+            <textarea name="abstract_body">{{ submission.text }}</textarea><br> 
+            <input type="text" value="{% if submission.date_submitted %}1{% else %}0{% endif %}" name="finalized"><br> 
+          </form>
+      </div>
+</body>
+</html>

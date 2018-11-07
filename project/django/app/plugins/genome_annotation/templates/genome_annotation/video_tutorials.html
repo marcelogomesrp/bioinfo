@@ -1,0 +1,21 @@
+{% extends 'courses/base_course.html' %}
+{% load i18n pagination_tags ga_tags %}
+
+{% block page_title %}{% trans "Video tutorials" %}{% endblock %}
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; 
+		<a href="{% url home %}">{% trans "Classes" %}</a> &rsaquo; 
+		<a href="#">{{ course_enrollment.course.name }}</a> &rsaquo; {% trans "Video tutorials" %}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<header>
+		<h1>{% trans "Video tutorials" %}</h1>
+	</header>
+	
+	<i>Nenhum vídeo encontrado</i>
+	<br/>
+{% endblock %}

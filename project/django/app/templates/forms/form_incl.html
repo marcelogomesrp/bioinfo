@@ -1,0 +1,11 @@
+{% load i18n %}
+<form action="{{ request.path }}" method="post" class="default-ul-form" accept-charset="utf-8">
+	{% csrf_token %}
+	{% include "forms/errors.html" %}
+	
+    <ul>
+		{% include "forms/form.html" %}
+    </ul>		
+
+	<p><input type="submit" value="{% trans "Continue" %} &rarr;"></p>
+</form>

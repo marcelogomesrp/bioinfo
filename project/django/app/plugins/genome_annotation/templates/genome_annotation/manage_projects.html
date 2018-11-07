@@ -1,0 +1,59 @@
+{% extends 'courses/base_course.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Manage questions" %}{% endblock %}
+
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; 
+		<a href="{% url home %}">{% trans "Classes" %}</a> &rsaquo; 
+		<a href="#">{{ course.name }}</a> &rsaquo; {% trans "Questions" %}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<header>
+		<h1>{% trans "Projects" %}</h1>
+	</header>
+<!-- 
+
+
+<section class="content-module">
+	<p>
+		<a href="#" class="add-link">{% trans "Add project" %}</a>
+	</p>
+</section>
+-->
+
+	<section class="content-module">
+		<header>
+			<h2>{% trans "Manage" %}</h2>
+			<p>{% trans "Select a project to add or modify questions." %}</p>
+		</header>
+
+		<table class="default-table" cellpadding="0" cellspacing="0">
+			<thead>
+				<tr>
+					<td>{% trans "Project" %}</td>
+					<td>{% trans "Date added" %}</td>
+					<td></td>
+					<td></td>
+					<td class="action"></td>
+				</tr>
+			</thead>
+			<tbody>
+				{% for p in projects %}					
+					<tr>
+						<td>{{ p.name }}</td>
+						<td>{{ p.date_added|date:"d/m/Y" }}</td>
+						<td><a href="{% url genome_annotation_manage_questions class.id p.id %}" class="view">{% trans "View questions" %} ({{ p.question_set.count }})</a></td>
+						<td><a href="#" class="modify">{% trans "Modify" %}</a></td>
+						<td><a href="#" class="remove confirm">{% trans "Remove" %}</a></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+
+{% endblock %}

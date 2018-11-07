@@ -1,0 +1,4 @@
+Seu resumo foi submetido com sucesso em {% now "d/m/Y - H:i:s" %} e está sob avaliação do responsável pela disciplina.
+
+BioInfo Online
+http://lgmb.fmrp.usp.br/bioinfo_v2

@@ -1,0 +1,16 @@
+{% extends "genome_annotation/submission/base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <header>
+        <h2>{% trans "5. Submit" %}</h2>
+    </header>
+    
+    <form method="post" action="">
+        {% csrf_token %}
+            <a class="pdf-download" target="_blank" href="{% url genome_annotation_submission_pdf_preview class_enrollment.id plugin_enrollment.id %}">{% trans "Click here to preview your submission" %}</a>
+        <div class="submit-row">
+            <input value="{% trans "Submit" %}" onclick="return confirm('{% trans "Are you sure? \nYou will not be able to modify your resume after submitted." %}')" type="submit" />
+        </div>
+    </form>
+{% endblock %}

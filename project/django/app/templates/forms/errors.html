@@ -1,0 +1,15 @@
+{% load i18n %}
+
+{% if form.errors %}
+	<section id="error-container">
+		<h2>{% trans "Please correct the following fields:" %}</h2>
+		<ul>
+		{% for field in form %}
+			{% if field.errors %}
+				<li{% if forloop.last %} class="last"{% endif %}><span>{{ field.label }}</span> {{ field.errors|striptags }}</li>
+			{% endif %}
+		{% endfor %}
+		</ul>
+	
+	</section>
+{% endif %}

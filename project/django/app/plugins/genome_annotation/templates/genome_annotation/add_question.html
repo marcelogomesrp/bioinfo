@@ -1,0 +1,33 @@
+{% extends 'courses/base_course.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Add question" %}{% endblock %}
+
+
+{% block breadcrumbs %}
+	<nav class="breadcrumbs">
+		<a href="{% url home %}">{% trans "Home" %}</a> &rsaquo; 
+		<a href="{% url home %}">{% trans "Classes" %}</a> &rsaquo; 
+		<a href="#">{{ course.name }}</a> &rsaquo; 
+		<a href="{% url genome_annotation_manage_projects class.id %}">{% trans "Questions" %}</a> &rsaquo;
+		<a href="{% url genome_annotation_manage_questions class.id project.id %}">{{ project.name }}</a> &rsaquo; {% trans "Add question" %}
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<header>
+		<h1>{% trans "Add question" %}: {{ project.name }}</h1>
+	</header>
+
+
+	<section class="content-module">
+		{% include "forms/form_incl.html" %}
+	</section>
+	
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function(){
+			$("#id_text").wysiwyg();
+		});
+	</script>
+
+{% endblock %}
