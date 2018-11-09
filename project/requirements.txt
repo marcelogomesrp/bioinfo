@@ -3,3 +3,4 @@ unipath
 django-pagination
 django-extensions
 south
+mysql-python
